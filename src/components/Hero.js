@@ -12,7 +12,18 @@ transform: translate(-50%, -50%);
 `
 
 const StoriesWrapper = styled.div`
-padding-top: 4rem;
+
+padding-top: 1rem;
+overflow: hidden;
+
+
+@media only screen and (min-width: 769px) {
+    padding-top: 2rem;
+    overflow: hidden;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
 `
 
 const array = [
@@ -32,13 +43,13 @@ const array = [
 
 export default function Hero() {
     return (
-        <div>
+        <>
             <StoriesWrapper>
                 <Stories />
             </StoriesWrapper>
             <LogoWrapper>
                 <img src="images/logoteste.png"/>
             </LogoWrapper>
-        </div>
+        </>
     )
 }
