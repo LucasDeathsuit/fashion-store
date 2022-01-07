@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Story from './Story'
 import styled from 'styled-components'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
-import { WindowSharp } from '@mui/icons-material';
+import { useRef } from 'react';
+
 
 const TopItem = styled.div`
 display: flex;
@@ -12,6 +13,7 @@ object-fit: cover;
 overflow: auto;
 overflow: -moz-scrollbars-none;
 -ms-overflow-style: none;
+scroll-behavior: smooth;
 
 ::-webkit-scrollbar {
     display: none;
@@ -33,10 +35,11 @@ const LeftArrow = styled.div`
     justify-content: center;
     align-items: center;
 
-
-    @media only screen and (min-width: 768px) {
-        display: none;
+    :hover {
+        cursor: pointer
     }
+
+   
 
 `
 const RightArrow = styled.div`
@@ -48,15 +51,29 @@ const RightArrow = styled.div`
     justify-content: center;
     align-items: center;
 
-
-    @media only screen and (min-width: 768px) {
-        display: none;
+    :hover {
+        cursor: pointer
     }
+
+
 `
 
 
 
 export default function Stories() {
+
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const [windowSize, setWindowSize] = useState(0);
+
+    const [showLeftArrow, setShowLeftArrow] = useState(false);
+
+    const [showRightArrow, setShowRightArrow] = useState(false);
+
+    const [controlScroll, setControlScroll] = useState(false);
+
+
+    // const [storiesBiggerThanWindow, setStoriesBiggerThanWindow] = useState(0);
 
     const data = [
         {
@@ -105,12 +122,67 @@ export default function Stories() {
         },
     ]
 
+    const refStories = useRef(null)
+
+    const handleArrowClick = (scrollOffset) => {
+        const newScrollLeft = refStories.current.scrollLeft + scrollOffset
+
+        setScrollLeft(newScrollLeft);
+
+    }
+
+    const handleResize = () => {
+        setWindowSize(window.innerWidth);
+    }
+
+    window.addEventListener('resize', handleResize)
+
     
+    const handleStoriesScroll = () => {
+        setScrollLeft(refStories.current.scrollLeft)
+    }
+
+    useEffect(() => {
+
+
+        refStories.current.addEventListener('scroll', handleStoriesScroll);
+
+        return function cleanup () {
+            refStories.current.removeEventListener('scroll', handleStoriesScroll)
+        }
+
+        
+    }, [])
+
+    useEffect(() => {
+        refStories.current.scrollLeft = scrollLeft;
+        console.log(controlScroll)
+        if (refStories.current.scrollWidth >= window.innerWidth - 12) {
+            setShowRightArrow(true);
+            if (scrollLeft <= 0) {
+                setShowLeftArrow(false);
+            } else {
+                setShowLeftArrow(true);
+            }
+            console.log(scrollLeft)
+            console.log(refStories.current.scrollWidth - refStories.current.clientWidth)
+            if (scrollLeft >= refStories.current.scrollWidth - refStories.current.clientWidth-1) {
+                setShowRightArrow(false);
+            } else {
+                setShowRightArrow(true);
+            }
+        } else {
+            setShowLeftArrow(false);
+            setShowRightArrow(false);
+        }
+    }, [controlScroll, scrollLeft, windowSize])
+
+
 
     return (
-        <TopItem>
+        <TopItem ref={refStories}>
             <LeftArrow>
-                <ArrowCircleLeftIcon style={{ fontSize: 40}} />
+                <ArrowCircleLeftIcon value="Left" onClick={() => handleArrowClick(-100)} style={{ fontSize: 40, display: showLeftArrow ? "block" : "none" }} />
             </LeftArrow>
             {
                 data.map(story => {
@@ -118,7 +190,7 @@ export default function Stories() {
                 })
             }
             <RightArrow>
-                <ArrowCircleRightIcon onClick={handleArrowClick} style={{ fontSize: 40 }} />
+                <ArrowCircleRightIcon value="Right" onClick={() => handleArrowClick(100)} style={{ fontSize: 40, display: showRightArrow ? "block" : "none" }} />
             </RightArrow>
         </TopItem>
     )
