@@ -31,31 +31,26 @@ const LeftArrow = styled.div`
     position: absolute;
     left: 0px;
     color: white;
-    height: 54px;
+    height: 66px;
     justify-content: center;
     align-items: center;
 
     :hover {
         cursor: pointer
     }
-
-   
-
 `
 const RightArrow = styled.div`
     display: flex;
     position: absolute;
     right: 5px;
     color: white;
-    height: 54px;
+    height: 66px;
     justify-content: center;
     align-items: center;
 
     :hover {
         cursor: pointer
     }
-
-
 `
 
 
@@ -78,46 +73,46 @@ export default function Stories() {
     const data = [
         {
             name: "Sapatos",
-            icon: "shoe.jpg",
+            icon: "sapatos.jpg",
 
         },
         {
             name: "Blusas",
-            icon: "shoe.jpg",
+            icon: "blusas.jpg",
         },
         {
             name: "Casacos",
-            icon: "shoe.jpg",
+            icon: "casacos.jpg",
         },
         {
             name: "Sapatos",
-            icon: "shoe.jpg",
+            icon: "sapatos.jpg",
 
         },
         {
             name: "Blusas",
-            icon: "shoe.jpg",
+            icon: "blusas.jpg",
         },
         {
             name: "Casacos",
-            icon: "shoe.jpg",
+            icon: "casacos.jpg",
         },
         {
             name: "Sapatos",
-            icon: "shoe.jpg",
+            icon: "sapatos.jpg",
 
         },
         {
             name: "Blusas",
-            icon: "shoe.jpg",
+            icon: "blusas.jpg",
         },
         {
             name: "Casacos",
-            icon: "shoe.jpg",
+            icon: "casacos.jpg",
         },
         {
             name: "Sapatos",
-            icon: "shoe.jpg",
+            icon: "sapatos.jpg",
 
         },
     ]
@@ -137,7 +132,7 @@ export default function Stories() {
 
     window.addEventListener('resize', handleResize)
 
-    
+
     const handleStoriesScroll = () => {
         setScrollLeft(refStories.current.scrollLeft)
     }
@@ -147,27 +142,28 @@ export default function Stories() {
 
         refStories.current.addEventListener('scroll', handleStoriesScroll);
 
-        return function cleanup () {
+        return function cleanup() {
             refStories.current.removeEventListener('scroll', handleStoriesScroll)
         }
 
-        
+
     }, [])
 
     useEffect(() => {
+        let timer;
         refStories.current.scrollLeft = scrollLeft;
-        console.log(controlScroll)
         if (refStories.current.scrollWidth >= window.innerWidth - 12) {
-            setShowRightArrow(true);
             if (scrollLeft <= 0) {
-                setShowLeftArrow(false);
+                timer = setTimeout(() => {
+                    setShowLeftArrow(false);
+                }, 50);
             } else {
                 setShowLeftArrow(true);
             }
-            console.log(scrollLeft)
-            console.log(refStories.current.scrollWidth - refStories.current.clientWidth)
-            if (scrollLeft >= refStories.current.scrollWidth - refStories.current.clientWidth-1) {
-                setShowRightArrow(false);
+            if (scrollLeft >= refStories.current.scrollWidth - refStories.current.clientWidth - 1) {
+                timer = setTimeout(() => {
+                    setShowRightArrow(false);
+                }, 50);
             } else {
                 setShowRightArrow(true);
             }
@@ -175,14 +171,18 @@ export default function Stories() {
             setShowLeftArrow(false);
             setShowRightArrow(false);
         }
-    }, [controlScroll, scrollLeft, windowSize])
+
+
+
+        return () => clearTimeout(timer);
+    }, [scrollLeft, windowSize])
 
 
 
     return (
         <TopItem ref={refStories}>
             <LeftArrow>
-                <ArrowCircleLeftIcon value="Left" onClick={() => handleArrowClick(-100)} style={{ fontSize: 40, display: showLeftArrow ? "block" : "none" }} />
+                <ArrowCircleLeftIcon value="Left" onClick={() => handleArrowClick(-300)} style={{ fontSize: 40, display: showLeftArrow ? "block" : "none" }} />
             </LeftArrow>
             {
                 data.map(story => {
@@ -190,7 +190,7 @@ export default function Stories() {
                 })
             }
             <RightArrow>
-                <ArrowCircleRightIcon value="Right" onClick={() => handleArrowClick(100)} style={{ fontSize: 40, display: showRightArrow ? "block" : "none" }} />
+                <ArrowCircleRightIcon value="Right" onClick={() => handleArrowClick(300)} style={{ fontSize: 40, display: showRightArrow ? "block" : "none" }} />
             </RightArrow>
         </TopItem>
     )

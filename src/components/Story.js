@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Icone = styled.img`
-    width: 3rem;
-    border-radius: 30px;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
     border: 3px solid pink;
     object-fit: cover;
 
     @media only screen and (min-width: 768px) {
-        width: 3rem;
-        border-radius: 30px;
+        border-radius: 50%;
         border: 3px solid pink;
         object-fit: cover;
     }
@@ -19,15 +19,17 @@ const Item = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-width: 80px;
+margin-left: 0.5rem;
+margin-right: 0.5rem;
 `
 
 const Description = styled.div`
-color: white;
+color: #f2f2f2;
 text-transform: uppercase;
-font-family: sans-serif;
+font-family: 'Roboto', sans-serif;
+font-size: 0.85rem;
+font-weight: 600;
 margin-top: 0.5rem;
-font-size: 0.8rem;
 margin: 8px;
 `
 
