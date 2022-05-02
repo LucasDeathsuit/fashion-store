@@ -120,8 +120,8 @@ export default function StoryView({ onClick, openIndex }) {
 
 
 
-    const newData = data.map(({ icon }, index) => {
-        return <StoryContent key={index} imagePath={icon} />
+    const newData = data.map(({ icon, name }, index) => {
+        return <StoryContent key={index} imagePath={icon} name={name} />
     })
 
     //Adding +2 to supress the two ghost stories.
@@ -130,7 +130,7 @@ export default function StoryView({ onClick, openIndex }) {
 
     const handleSelectedStory = (index) => {
         if (index < 2 || index > newData.length - 3) return
-            setIndex(index);
+        setIndex(index);
     }
 
 
@@ -140,8 +140,8 @@ export default function StoryView({ onClick, openIndex }) {
 
         refScroll.current.onmousedown = function (e) { if (e.button === 1) return false; }
 
-        window.addEventListener("keydown", function(e) {
-            if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        window.addEventListener("keydown", function (e) {
+            if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(e.code) > -1) {
                 e.preventDefault();
             }
         }, false);
