@@ -3,8 +3,11 @@ import styled from 'styled-components';
 import Hero from './components/Hero';
 import Promo from './components/Promo';
 
+
+
 const HeroWrapper = styled.div`
   height: 100vh;
+  min-height: 450px;
   background-image: url(images/header-image.png);
   background-attachment: fixed;
   background-position: center;

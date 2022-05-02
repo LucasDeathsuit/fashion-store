@@ -12,9 +12,6 @@ const ItemsWrapper = styled.div`
     
 `
 
-const Item = styled.div`
-
-`
 
 const Influencer = styled.div`
 

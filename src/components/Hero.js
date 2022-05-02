@@ -4,42 +4,24 @@ import React from 'react'
 import Stories from './Stories'
 
 const LogoWrapper = styled.div`
-display: block;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+display: flex;
+position: relative;
+justify-content: center;
+align-items: center;
+height: calc(80vh);
+min-height: 250px;
+width: 100%;
 `
 
 const StoriesWrapper = styled.div`
 
-padding-top: 1rem;
 overflow: hidden;
 
 
 @media only screen and (min-width: 769px) {
-    padding-top: 2rem;
     overflow: hidden;
-    max-width: 1024px;
-    margin-left: auto;
-    margin-right: auto;
 }
 `
-
-const array = [
-    {
-        name: "Home",
-        path: "/",
-    },
-    {
-        name: "News",
-        path: "/news",
-    },
-    {
-        name: "Contato",
-        path: "/contact-us",
-    }
-]
 
 export default function Hero() {
     return (
@@ -48,7 +30,7 @@ export default function Hero() {
                 <Stories />
             </StoriesWrapper>
             <LogoWrapper>
-                <img src="images/logoteste.png"/>
+                <img alt='Logo' src="images/logoteste.png" />
             </LogoWrapper>
         </>
     )

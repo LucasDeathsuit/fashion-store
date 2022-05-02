@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import Story from './Story'
+import StoryView from './Stories/StoryView';
 import styled from 'styled-components'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import { useRef } from 'react';
 
+const StoryViewWrapper = styled.div`
+  position: fixed;
+  display: block;
+  height: 100vh;
+  width: 100%;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.8);
+`
 
 const TopItem = styled.div`
 display: flex;
@@ -14,6 +23,8 @@ overflow: auto;
 overflow: -moz-scrollbars-none;
 -ms-overflow-style: none;
 scroll-behavior: smooth;
+margin-top: 1rem;
+justify-content: space-between;
 
 ::-webkit-scrollbar {
     display: none;
@@ -21,8 +32,11 @@ scroll-behavior: smooth;
 }
 
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 1024px) {
     justify-content: space-around;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 `
 
@@ -65,7 +79,9 @@ export default function Stories() {
 
     const [showRightArrow, setShowRightArrow] = useState(false);
 
-    const [controlScroll, setControlScroll] = useState(false);
+    const [showStoryView, setShowStoryView] = useState(false);
+
+    const [storyIndex, setStoryIndex] = useState("");
 
 
     // const [storiesBiggerThanWindow, setStoriesBiggerThanWindow] = useState(0);
@@ -119,6 +135,14 @@ export default function Stories() {
 
     const refStories = useRef(null)
 
+    const handleStoriesClick = () => {
+        setShowStoryView(true);
+    }
+
+    const handleCloseStoriesClick = () => {
+        setShowStoryView(false);
+    }
+
     const handleArrowClick = (scrollOffset) => {
         const newScrollLeft = refStories.current.scrollLeft + scrollOffset
 
@@ -128,6 +152,7 @@ export default function Stories() {
 
     const handleResize = () => {
         setWindowSize(window.innerWidth);
+
     }
 
     window.addEventListener('resize', handleResize)
@@ -142,9 +167,6 @@ export default function Stories() {
 
         refStories.current.addEventListener('scroll', handleStoriesScroll);
 
-        return function cleanup() {
-            refStories.current.removeEventListener('scroll', handleStoriesScroll)
-        }
 
 
     }, [])
@@ -178,20 +200,27 @@ export default function Stories() {
     }, [scrollLeft, windowSize])
 
 
-
     return (
-        <TopItem ref={refStories}>
-            <LeftArrow>
-                <ArrowCircleLeftIcon value="Left" onClick={() => handleArrowClick(-300)} style={{ fontSize: 40, display: showLeftArrow ? "block" : "none" }} />
-            </LeftArrow>
+        <>
             {
-                data.map(story => {
-                    return <Story name={story.name} icon={story.icon} />
-                })
+                showStoryView &&
+                <StoryViewWrapper>
+                    <StoryView openIndex={storyIndex} onClick={handleCloseStoriesClick} />
+                </StoryViewWrapper>
             }
-            <RightArrow>
-                <ArrowCircleRightIcon value="Right" onClick={() => handleArrowClick(300)} style={{ fontSize: 40, display: showRightArrow ? "block" : "none" }} />
-            </RightArrow>
-        </TopItem>
+            <TopItem ref={refStories}>
+                <LeftArrow>
+                    <ArrowCircleLeftIcon value="Left" onClick={() => handleArrowClick(-300)} style={{ fontSize: 40, display: showLeftArrow ? "block" : "none" }} />
+                </LeftArrow>
+                {
+                    data.map((story, index) => {
+                        return <Story key={index} getStoryIndex={setStoryIndex} index={index} onClick={handleStoriesClick} name={story.name} icon={story.icon} />
+                    })
+                }
+                <RightArrow>
+                    <ArrowCircleRightIcon value="Right" onClick={() => handleArrowClick(300)} style={{ fontSize: 40, display: showRightArrow ? "block" : "none" }} />
+                </RightArrow>
+            </TopItem>
+        </>
     )
 }

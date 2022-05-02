@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+    import React from 'react'
+    import styled from 'styled-components'
 
 const ImageWrapper = styled.div``
 
@@ -13,7 +13,6 @@ export default function ClothItem() {
     return (
         <div>
             <ImageWrapper>
-                <img />
             </ImageWrapper>
             <Data>
                 <Price></Price>

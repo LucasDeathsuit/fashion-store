@@ -21,6 +21,7 @@ flex-direction: column;
 align-items: center;
 margin-left: 0.5rem;
 margin-right: 0.5rem;
+cursor: pointer;
 `
 
 const Description = styled.div`
@@ -33,9 +34,15 @@ margin-top: 0.5rem;
 margin: 8px;
 `
 
-export default function Story({ name, icon }) {
+export default function Story({ name, icon, onClick, getStoryIndex, index }) {
+
+    const handleStoriesClick = () => {
+        onClick()
+        getStoryIndex(index)
+    }
+
     return (
-        <Item>
+        <Item onClick={handleStoriesClick}>
             <Icone src={`images/${icon}`} />
             <Description>
                 {name}
