@@ -13,10 +13,10 @@ const ContentBox = styled.div`
 `
 
 const Content = styled.img`
-    height: ${props => props.blank === 'true' ? '0%' : '100%'};
+    height: 100%;
     width: 100%;
     object-fit: contain;
-    background-color: ${props => props.blank === "true" ? "transparent" : "#f0c3cb"};
+    background-color: #F67280;
     border-radius: 20px;
     cursor: pointer;
     
@@ -34,13 +34,15 @@ const ContentNav = styled.div`
     padding-top: 20px;
     padding-left: 15px;
     padding-bottom: 10%;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
 `
 
 const ClothType = styled.img`
     width: 38px;
     height: 38px;
     border-radius: 100%;
+    border: 2px solid #f2f2f2;
 `
 
 const ContentBottom = styled.div`
@@ -49,12 +51,16 @@ const ContentBottom = styled.div`
 export default function StoryContent({ imagePath, name }) {
 
 
+
     return (
+
+
+
         <ContentBox>
-            {imagePath === "null" ? <Content blank="true" /> : <Content src={`images/${imagePath}`} />}
             {imagePath === "null" ?
                 null :
                 <>
+                    <Content src={`images/${imagePath}`} />
                     <ContentNav>
                         <ClothType alt={name} src={`images/${imagePath}`} />
                         {name}

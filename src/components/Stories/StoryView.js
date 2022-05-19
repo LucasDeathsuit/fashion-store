@@ -106,7 +106,7 @@ const Logo = styled.img`
     height: 65px;
     width: 65px;
 
-    @media (max-width: 440px) {
+    @media only screen and (max-width: 480px) {
         visibility: hidden;
     }
 `

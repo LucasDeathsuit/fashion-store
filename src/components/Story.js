@@ -5,14 +5,10 @@ const Icone = styled.img`
     width: 62px;
     height: 62px;
     border-radius: 50%;
-    border: 3px solid pink;
+    border: 3px solid #F67280;
+    background-color: white;
+    padding: 2px;
     object-fit: cover;
-
-    @media only screen and (min-width: 768px) {
-        border-radius: 50%;
-        border: 3px solid pink;
-        object-fit: cover;
-    }
 `
 
 const Item = styled.div`
@@ -26,12 +22,11 @@ cursor: pointer;
 
 const Description = styled.div`
 color: #f2f2f2;
-text-transform: uppercase;
-font-family: 'Roboto', sans-serif;
-font-size: 0.85rem;
-font-weight: 600;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: 1.1rem;
 margin-top: 0.5rem;
 margin: 8px;
+font-weight: 600;
 `
 
 export default function Story({ name, icon, onClick, getStoryIndex, index }) {

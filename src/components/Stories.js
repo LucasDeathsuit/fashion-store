@@ -6,11 +6,17 @@ import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import { useRef } from 'react';
 
+const StoriesWrapper = styled.div`
+overflow: hidden;
+`
+
 const StoryViewWrapper = styled.div`
   position: fixed;
   display: block;
+  top: 0;
   height: 100vh;
   width: 100%;
+  overflow: hidden;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.8);
 `
@@ -24,7 +30,9 @@ overflow: -moz-scrollbars-none;
 -ms-overflow-style: none;
 scroll-behavior: smooth;
 margin-top: 1rem;
-justify-content: space-between;
+margin-bottom: 1rem;
+width: 100%;
+justify-content: space-between;;
 
 ::-webkit-scrollbar {
     display: none;
@@ -32,9 +40,11 @@ justify-content: space-between;
 }
 
 
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
+    width: 90%;
     justify-content: space-around;
     margin-top: 2rem;
+    margin-bottom: 1rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -201,7 +211,7 @@ export default function Stories() {
 
 
     return (
-        <>
+        <StoriesWrapper>
             {
                 showStoryView &&
                 <StoryViewWrapper>
@@ -221,6 +231,6 @@ export default function Stories() {
                     <ArrowCircleRightIcon value="Right" onClick={() => handleArrowClick(300)} style={{ fontSize: 40, display: showRightArrow ? "block" : "none" }} />
                 </RightArrow>
             </TopItem>
-        </>
+        </StoriesWrapper>
     )
 }

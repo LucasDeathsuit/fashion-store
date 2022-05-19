@@ -3,9 +3,10 @@ import styled from 'styled-components'
 import ClothItem from './ClothItem'
 
 const StoreWrapper = styled.div`
-    background-color: red;
     display: flex;
-    flex-basis: 35%
+    flex-basis: 35%;
+    height: 100vh;
+
 `
 
 const ItemsWrapper = styled.div`
