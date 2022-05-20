@@ -24,7 +24,10 @@ const StoriesWrapper = styled.div`
 `
 
 const PromoWrapper = styled.div`
-  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
   background-color: #f0f6fa;
   background-attachment: fixed;
   background-position: center;
