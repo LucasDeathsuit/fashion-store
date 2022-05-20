@@ -22,7 +22,7 @@ const Product = styled.img`
     object-fit: cover;
     object-position: top;
     border-radius: 8px 8px 0 0;
-    aspect-ratio: 4/5;
+    aspect-ratio: 9/11;
 `
 
 const Data = styled.div`
