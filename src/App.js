@@ -9,6 +9,9 @@ import Stories from './components/Stories';
 
 const HeroWrapper = styled.div`
   height: calc(100vh - 85px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 450px;
   background-position: center;
   background-repeat: no-repeat;
@@ -24,17 +27,15 @@ const StoriesWrapper = styled.div`
 `
 
 const PromoWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: center;
+  padding: 50px;
   background-color: #f0f6fa;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   background: rgb(255,228,252);
   background: linear-gradient(90deg, #8ec5fc 0%, #E0c3fc 100%);
+
+  
+  @media (max-width: 800px) {
+      padding: 10px 0;
+    }
 `
 
 const NavbarWrapper = styled.div`

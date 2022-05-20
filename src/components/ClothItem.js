@@ -5,26 +5,32 @@ const Item = styled.div`
     background-color: #f2f2f2;
     padding: 10px;
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;    
+    max-width: 250px;
+    
 `
 
+const ContentWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+`
+
+
 const Product = styled.img`
-    width: 200px;
-    height: 200px;
+    width: 100%;
     object-fit: cover;
     object-position: top;
     border-radius: 8px 8px 0 0;
+    aspect-ratio: 4/5;
 `
 
 const Data = styled.div`
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #f2f2f2;
     background-color: #355c7d;
-    width: 200px;
     border-radius: 0 0 8px 8px;
+    height: 100%;
 `
 
 const Price = styled.h1`
@@ -41,11 +47,13 @@ const Description = styled.p`
 export default function ClothItem({ cloth }) {
     return (
         <Item>
-            <Product src={`images/${cloth.icon}`} />
-            <Data>
-                <Price>R$120.00</Price>
-                <Description>{cloth.name}</Description>
-            </Data>
+            <ContentWrapper>
+                <Product src={`images/${cloth.icon}`} />
+                <Data>
+                    <Price>R$120.00</Price>
+                    <Description>{cloth.name}</Description>
+                </Data>
+            </ContentWrapper>
         </Item>
     )
 }

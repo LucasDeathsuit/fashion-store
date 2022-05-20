@@ -76,7 +76,7 @@ const Logo = styled.img`
 
 export default function Navbar() {
 
-    const [isShowingMenu, setIsShowingMenu] = useState(true);
+    const [isShowingMenu, setIsShowingMenu] = useState(false);
 
     return (
         <Menu>

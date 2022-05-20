@@ -15,14 +15,25 @@ const data = [
         name: "Sapatos",
         icon: "sapatos.jpg",
 
-    }, {
+    }, 
+    {
         name: "Blusas",
         icon: "blusas.jpg",
     },
     {
         name: "Casacos",
         icon: "casacos.jpg",
-    }, {
+    }, 
+    {
+        name: "Blusas",
+        icon: "blusas.jpg",
+    },
+    {
+        name: "Sapatos",
+        icon: "sapatos.jpg",
+
+    }, 
+    {
         name: "Blusas",
         icon: "blusas.jpg",
     },
@@ -36,27 +47,23 @@ const PromoItem = styled.div`
 
 const ItemsWrapper = styled.div`
     display: grid;
-    grid-template-columns: 220px 220px 220px;
-    gap: 20px;
-    margin: 20px;
-    height: 100%;
-    width: 70vw;
-    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    align-items: stretch;
     justify-content: center;
+    max-width: 1200px;
 
-    @media (max-width: 1024px) {
-        grid-template-columns: 220px 220px;
+    @media (max-width: 1300px) {
+        grid-template-columns: 1fr 1fr 1fr;
     }
-`
 
-const SideImage = styled.div`
-`
-const Woman = styled.img`
-    right: 0;
-    display: block;
-    width: 100%;
-`
+    @media (max-width: 1000px) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+    }
 
+`
 
 export default function Promo() {
     return (
@@ -68,8 +75,6 @@ export default function Promo() {
                     })
                 }
             </ItemsWrapper>
-            <SideImage>
-            </SideImage>
         </PromoItem>
     )
 }
