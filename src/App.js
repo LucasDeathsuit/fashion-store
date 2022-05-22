@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Promo from './components/Promo';
 import Stories from './components/Stories';
+import CommentSection from './components/CommentSection';
 
 
 
@@ -47,6 +48,15 @@ const NavbarWrapper = styled.div`
   z-index: 5;
 `
 
+const CommentSectionWrapper = styled.div`
+  background-image: url('images/Prancheta 3.png');
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  gap: 20px;
+`
+
 export default function App() {
   return (
     <>
@@ -59,12 +69,16 @@ export default function App() {
       <StoriesWrapper>
         <Stories />
       </StoriesWrapper>
-      
       <PromoWrapper>
         <Promo>
         </Promo>
       </PromoWrapper>
-    
+
+      <CommentSectionWrapper>
+        <CommentSection/>
+        <CommentSection/>
+        <CommentSection/>
+      </CommentSectionWrapper>
       
       <StoriesWrapper>
         <Stories />
