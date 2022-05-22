@@ -35,18 +35,28 @@ const RightMenuList = styled.ul`
     font-weight: 700;
 
     @media (max-width: 480px) {
-        display: ${props => props.showing};
-        flex-direction: column;
-        position: absolute;
-        top: 85px;
-        left: 0;
-        width: 100%;
-        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 90%);
-        background-color: #F6728050;
-        padding: 10px 0px;
-        transition: transform 1s;
-        transform-origin: top;
+        display: none;
     }
+`
+
+const MobileMenu = styled.ul`
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style: none;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f2f2f2;
+    font-weight: 700;
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.5) 90%);
+    background-color: #F6728050;
+    padding: 10px 0px;
+    transition: transform 1s;
+    transform-origin: top;
 `
 
 const MenuIconWrapper = styled.div`
@@ -67,8 +77,6 @@ const NavItem = styled.li`
     cursor: pointer;
 `
 
-const LogoWrapper = styled.div`
-`
 const Logo = styled.img`
     max-height: 70px;
 `
@@ -78,6 +86,14 @@ export default function Navbar() {
 
     const [isShowingMenu, setIsShowingMenu] = useState(false);
 
+    const handleResize = () => {
+        if(window.innerWidth > 480) {
+            setIsShowingMenu(false)
+        }
+    }
+    
+    window.addEventListener('resize', handleResize);
+
     return (
         <Menu>
             <LeftMenu>
@@ -86,21 +102,39 @@ export default function Navbar() {
             <MenuIconWrapper onClick={() => setIsShowingMenu(!isShowingMenu)}>
                 <MenuIcon />
             </MenuIconWrapper>
+            {!isShowingMenu &&
+                <RightMenuList >
+                    <NavItem>
+                        <CallIcon color='white' />
+                        Atendimento
+                    </NavItem>
+                    <NavItem>
+                        <PersonIcon color='white' />
+                        Conta
+                    </NavItem>
+                    <NavItem>
+                        <ShoppingCartIcon color='white' />
+                        Carrinho
+                    </NavItem>
+                </RightMenuList>}
             {isShowingMenu &&
-            <RightMenuList>
-                <NavItem>
-                    <CallIcon color='white' />
-                    Atendimento
-                </NavItem>
-                <NavItem>
-                    <PersonIcon color='white' />
-                    Conta
-                </NavItem>
-                <NavItem>
-                    <ShoppingCartIcon color='white' />
-                    Carrinho
-                </NavItem>
-            </RightMenuList>}
+                <>
+                    <MobileMenu>
+                        <NavItem>
+                            <CallIcon color='white' />
+                            Atendimento
+                        </NavItem>
+                        <NavItem>
+                            <PersonIcon color='white' />
+                            Conta
+                        </NavItem>
+                        <NavItem>
+                            <ShoppingCartIcon color='white' />
+                            Carrinho
+                        </NavItem>
+                    </MobileMenu>
+                </>
+            }
         </Menu>
     )
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import StarIcon from '@mui/icons-material/Star';
+import Rating from './Rating';
 
 const Comment = styled.div`
 background-color: #f2f2f2;
@@ -10,14 +12,20 @@ align-items: center;
 `
 
 const Content = styled.div`
-
-  transform: translateY(-30%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
 `
 
 const UserSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  transform: translateY(-65%);
+  gap: 8px;
 `
 
 const Avatar = styled.img`
@@ -30,16 +38,14 @@ const Username = styled.h2`
   color: #8d8d8d;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 600;
-`
-
-const Rating = styled.span`
-  color: gold;
+  font-weight: 400;
 `
 
 const CommentArea = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 `
 
 const Title = styled.h3`
@@ -63,12 +69,10 @@ export default function CommentSection() {
           <Avatar src='images/sapatos.jpg' />
           <Username>Fernanda Teles</Username>
         </UserSection>
-        <Rating>
-          xxxxx
-        </Rating>
+        <Rating value="4" />
         <CommentArea>
           <Title>Lorem!!</Title>
-          <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</Paragraph>
+          <Paragraph>Lorem ipsum dolor sit amet, ct, consectetur adipiscing elit, sed do</Paragraph>
         </CommentArea>
       </Content >
     </Comment>

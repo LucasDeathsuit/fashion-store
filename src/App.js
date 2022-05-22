@@ -49,12 +49,21 @@ const NavbarWrapper = styled.div`
 `
 
 const CommentSectionWrapper = styled.div`
+  position: relative;
+  box-shadow: 0px 0px 8px 0px;
   background-image: url('images/Prancheta 3.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
   display: flex;
   justify-content: space-evenly;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding: 80px;
   gap: 20px;
+
+  @media (max-width: 800px) {
+    flex-wrap: wrap;
+    gap: 55px;
+  }
 `
 
 export default function App() {
@@ -79,17 +88,12 @@ export default function App() {
         <CommentSection/>
         <CommentSection/>
       </CommentSectionWrapper>
+
       
-      <StoriesWrapper>
-        <Stories />
-      </StoriesWrapper>
-      <HeroWrapper>
-        <Hero />
-      </HeroWrapper>
-      
-      <StoriesWrapper>
-        <Stories />
-      </StoriesWrapper>
+      <PromoWrapper>
+        <Promo>
+        </Promo>
+      </PromoWrapper>
     </>
   );
 }
