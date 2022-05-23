@@ -44,7 +44,7 @@ const NavbarWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #F6728050;
+  background-color: #F6728090;
   z-index: 5;
 `
 

@@ -35,7 +35,7 @@ const RightMenuList = styled.ul`
     color: #f2f2f2;
     font-weight: 700;
 
-    @media (max-width: 480px) {
+    @media (max-width: 720px) {
         flex-direction: column;
         justify-content: flex-start;
         position: absolute;
@@ -43,8 +43,7 @@ const RightMenuList = styled.ul`
         left: 0;
         height: calc(100vh - 85px);
         width: 100%;
-        background: #355c7d;
-        background-color: #F6728050;
+        background-color: #F6728090;
         padding: 10px 0px;
         transition: left 0.3s ease-out;
         left: ${props => props.active ? 0 : '-100%'};
@@ -52,14 +51,15 @@ const RightMenuList = styled.ul`
 `
 
 const MenuIconWrapper = styled.div`
-    display: none;
     cursor: pointer;
     color: white;
+    position: absolute;
+    right: 0%;
+    margin-right: 1rem;
 
-    @media (max-width: 480px) {
-        display: block;
+    @media (min-width: 720px) {
+        display: none;
     }
-    
 `
 
 const NavItem = styled.li`
@@ -76,6 +76,17 @@ const NavItem = styled.li`
 
     :hover {
         border-bottom: 2px solid #fff;
+    }
+
+    @media (max-width: 720px) {
+        height: auto;
+        flex-direction: row;
+        transition: all 0.3s;
+
+        :hover {
+            border-bottom: 2px solid transparent;
+            color: #355c7d;
+        }
     }
 `
 

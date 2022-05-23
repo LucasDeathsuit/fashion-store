@@ -97,6 +97,7 @@ const StoriesRow = styled.div`
     overflow-y: hidden;
     touch-action: none;
 
+
     &::-webkit-scrollbar {
         display: none;
     }
@@ -134,8 +135,6 @@ export default function StoryView({ onClick, openIndex }) {
     }
 
 
-
-
     useEffect(() => {
 
         refScroll.current.onmousedown = function (e) { if (e.button === 1) return false; }
@@ -170,8 +169,6 @@ export default function StoryView({ onClick, openIndex }) {
 
 
     const handleArrowClick = (side) => {
-
-
         if (side === "left") {
             if (index <= 2) return
             setIndex(index - 1);
