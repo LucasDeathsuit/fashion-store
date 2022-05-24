@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Button from './Button'
 
 const Item = styled.div`
     background-color: #f2f2f2;
@@ -7,7 +8,6 @@ const Item = styled.div`
     border-radius: 8px;
     width: 100%;    
     max-width: 250px;
-    
 `
 
 const ContentWrapper = styled.div`
@@ -16,6 +16,26 @@ const ContentWrapper = styled.div`
     min-height: 100%;
 `
 
+const ImageWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+const StyledButton = styled(Button)`
+    position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.7s ease-in-out;
+    padding: 15px;
+    border: 1px solid gray;
+
+    ${Item}:hover & {
+        opacity: 1;
+    }
+`
 
 const Product = styled.img`
     width: 100%;
@@ -23,6 +43,12 @@ const Product = styled.img`
     object-position: top;
     border-radius: 8px 8px 0 0;
     aspect-ratio: 9/11;
+    transition: all 0.3s ease-in-out;
+
+    ${Item}:hover & {
+        opacity: 0.5;
+        filter: brightness(70%);
+    }
 `
 
 const Data = styled.div`
@@ -31,6 +57,11 @@ const Data = styled.div`
     background-color: #355c7d;
     border-radius: 0 0 8px 8px;
     height: 100%;
+    transition: all 0.3s ease-out;
+
+    ${Item}:hover & {
+        background-color: #F67280;
+    }
 `
 
 const Price = styled.h1`
@@ -48,7 +79,10 @@ export default function ClothItem({ cloth }) {
     return (
         <Item>
             <ContentWrapper>
-                <Product src={`images/${cloth.icon}`} />
+                <ImageWrapper>
+                    <Product src={`images/${cloth.icon}`} />
+                    <StyledButton type="btn-outline">Visitar</StyledButton>
+                </ImageWrapper>
                 <Data>
                     <Price>R$120.00</Price>
                     <Description>{cloth.name}</Description>

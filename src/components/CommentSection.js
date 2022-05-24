@@ -4,8 +4,8 @@ import StarIcon from '@mui/icons-material/Star';
 import Rating from './Rating';
 
 const Comment = styled.div`
-background-color: #f2f2f2;
-border: solid 10px pink;
+background-color: #fff;
+border: solid 10px ${props => props.borderColor || 'pink'};
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -16,7 +16,7 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding: 20px;
+  padding: 25px;
 `
 
 const UserSection = styled.div`
@@ -61,18 +61,18 @@ const Paragraph = styled.p`
   text-align: center;
 `
 
-export default function CommentSection() {
+export default function CommentSection({borderColor, name, value, title, comment }) {
   return (
-    <Comment>
+    <Comment borderColor={borderColor}>
       <Content>
         <UserSection>
           <Avatar src='images/sapatos.jpg' />
-          <Username>Fernanda Teles</Username>
+          <Username>{name}</Username>
         </UserSection>
-        <Rating value="4" />
+        <Rating value={value} />
         <CommentArea>
-          <Title>Lorem!!</Title>
-          <Paragraph>Lorem ipsum dolor sit amet, ct, consectetur adipiscing elit, sed do</Paragraph>
+          <Title>{title}</Title>
+          <Paragraph>{comment}</Paragraph>
         </CommentArea>
       </Content >
     </Comment>

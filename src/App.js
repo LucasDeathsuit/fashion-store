@@ -84,9 +84,9 @@ export default function App() {
       </PromoWrapper>
 
       <CommentSectionWrapper>
-        <CommentSection/>
-        <CommentSection/>
-        <CommentSection/>
+        <CommentSection name="Fernanda Teles" value="5" title='Lorem!!' comment='Lorem ipsum dolor sit amet, ct, consectetur adipiscing elit, sed do'/>
+        <CommentSection name="Fernanda Teles" value="5" title='Lorem!!' comment='Lorem ipsum dolor sit amet, ct, consectetur adipiscing elit, sed do'/>
+        <CommentSection name="Fernanda Teles" value="5" title='Lorem!!' comment='Lorem ipsum dolor sit amet, ct, consectetur adipiscing elit, sed do'/>
       </CommentSectionWrapper>
 
       

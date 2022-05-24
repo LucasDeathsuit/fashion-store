@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Button from './Button'
 import ClothItem from './ClothItem'
 
 const data = [
@@ -41,8 +42,11 @@ const data = [
 
 const PromoItem = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    gap: 3rem;
+
 `
 
 const ItemsWrapper = styled.div`
@@ -75,6 +79,7 @@ export default function Promo() {
                     })
                 }
             </ItemsWrapper>
+            <Button type="btn-primary">Veja Mais</Button>
         </PromoItem>
     )
 }
