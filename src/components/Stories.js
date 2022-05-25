@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import { useRef } from 'react';
+import { getStoriesData } from './APIServices/APIServices';
 
 const StoriesWrapper = styled.div`
 overflow: hidden;
@@ -41,7 +42,7 @@ justify-content: space-between;;
 
 
 @media (min-width: 1024px) {
-    width: 90%;
+    width: 100%;
     justify-content: space-around;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -93,55 +94,11 @@ export default function Stories() {
 
     const [storyIndex, setStoryIndex] = useState("");
 
+    const [data, setData] = useState([])
 
-    // const [storiesBiggerThanWindow, setStoriesBiggerThanWindow] = useState(0);
 
-    const data = [
-        {
-            name: "Sapatos",
-            icon: "sapatos.jpg",
+    // 
 
-        },
-        {
-            name: "Blusas",
-            icon: "blusas.jpg",
-        },
-        {
-            name: "Casacos",
-            icon: "casacos.jpg",
-        },
-        {
-            name: "Sapatos",
-            icon: "sapatos.jpg",
-
-        },
-        {
-            name: "Blusas",
-            icon: "blusas.jpg",
-        },
-        {
-            name: "Casacos",
-            icon: "casacos.jpg",
-        },
-        {
-            name: "Sapatos",
-            icon: "sapatos.jpg",
-
-        },
-        {
-            name: "Blusas",
-            icon: "blusas.jpg",
-        },
-        {
-            name: "Casacos",
-            icon: "casacos.jpg",
-        },
-        {
-            name: "Sapatos",
-            icon: "sapatos.jpg",
-
-        },
-    ]
 
     const refStories = useRef(null)
 
@@ -173,12 +130,15 @@ export default function Stories() {
     }
 
     useEffect(() => {
-
-
         refStories.current.addEventListener('scroll', handleStoriesScroll);
-
-
-
+        const fetchData = async () => {
+            try {
+                setData(await getStoriesData());
+            } catch (err) {
+                console.log(err)
+            }
+        }
+        fetchData();
     }, [])
 
     useEffect(() => {
@@ -215,7 +175,7 @@ export default function Stories() {
             {
                 showStoryView &&
                 <StoryViewWrapper>
-                    <StoryView openIndex={storyIndex} onClick={handleCloseStoriesClick} />
+                    <StoryView openIndex={storyIndex} data={data} onClick={handleCloseStoriesClick} />
                 </StoryViewWrapper>
             }
             <TopItem ref={refStories}>

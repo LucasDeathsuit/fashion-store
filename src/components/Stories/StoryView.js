@@ -6,72 +6,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 
-const data = [
-    {
-        name: "Sapatos",
-        icon: "null",
-
-    },
-    {
-        name: "Sapatos",
-        icon: "null",
-
-    },
-    {
-        name: "Sapatos",
-        icon: "sapatos.jpg",
-
-    },
-    {
-        name: "Blusas",
-        icon: "blusas.jpg",
-    },
-    {
-        name: "Casacos",
-        icon: "casacos.jpg",
-    },
-    {
-        name: "Sapatos",
-        icon: "sapatos.jpg",
-
-    },
-    {
-        name: "Blusas",
-        icon: "blusas.jpg",
-    },
-    {
-        name: "Casacos",
-        icon: "casacos.jpg",
-    },
-    {
-        name: "Sapatos",
-        icon: "sapatos.jpg",
-
-    },
-    {
-        name: "Blusas",
-        icon: "blusas.jpg",
-    },
-    {
-        name: "Casacos",
-        icon: "casacos.jpg",
-    },
-    {
-        name: "Sapatos",
-        icon: "sapatos.jpg",
-    },
-    {
-        name: "Sapatos",
-        icon: "null",
-
-    },
-    {
-        name: "Sapatos",
-        icon: "null",
-
-    }
-];
-
 
 const NavBar = styled.div`
     display: flex;
@@ -112,16 +46,39 @@ const Logo = styled.img`
     }
 `
 
-export default function StoryView({ onClick, openIndex }) {
+export default function StoryView({ data, onClick, openIndex }) {
 
     const refStories = useRef([])
 
     const refScroll = useRef(null)
 
 
+    const storiesData = [
+        {
+        name: "null",
+        icon: "null",
+
+    },
+    {
+        name: "null",
+        icon: "null",
+
+    }, ...data,
+    {
+        name: "null",
+        icon: "null",
+
+    },
+    {
+        name: "null",
+        icon: "null",
+
+    }
+]
 
 
-    const newData = data.map(({ icon, name }, index) => {
+
+    const newData = storiesData.map(({ icon, name }, index) => {
         return <StoryContent key={index} imagePath={icon} name={name} />
     })
 
@@ -133,7 +90,6 @@ export default function StoryView({ onClick, openIndex }) {
         if (index < 2 || index > newData.length - 3) return
         setIndex(index);
     }
-
 
     useEffect(() => {
 

@@ -1,0 +1,52 @@
+{
+    "roupas": [
+        {
+            "name": "Sapatos",
+            "icon": "sapatos.jpg"
+        },
+        {
+            "name": "Blusas",
+            "icon": "blusas.jpg"
+        },
+        {
+            "name": "Casacos",
+            "icon": "casacos.jpg"
+        },
+        {
+            "name": "Sapatos",
+            "icon": "sapatos.jpg"
+        },
+        {
+            "name": "Blusas",
+            "icon": "blusas.jpg"
+        },
+        {
+            "name": "Casacos",
+            "icon": "casacos.jpg"
+        },
+        {
+            "name": "Sapatos",
+            "icon": "sapatos.jpg"
+        },
+        {
+            "name": "Blusas",
+            "icon": "blusas.jpg"
+        },
+        {
+            "name": "Casacos",
+            "icon": "casacos.jpg"
+        },
+        {
+            "name": "Blusas",
+            "icon": "blusas.jpg"
+        },
+        {
+            "name": "Sapatos",
+            "icon": "sapatos.jpg"
+        },
+        {
+            "name": "Blusas",
+            "icon": "blusas.jpg"
+        }
+    ]
+}

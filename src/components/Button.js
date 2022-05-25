@@ -1,29 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const STYLES = ['btn--primary', 'btn--secondary', 'btn--outline'];
 
-export default function Button({ className, type, children }) {
+const SIZES = ['btn--medium', 'btn--large'];
 
-    console.log(type)
 
-    const Item = styled.button`
+
+const Item = styled.button`
+        display: flex;
+        justify-content: center;
+        align-items: center;
         outline: none;
         border: none;
         border-radius: 4px;
-        padding: 12px 18px;
-        font-size: 1.2rem;
+        
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Geneva, Tahoma, sans-serif;
         font-weight: 600;
         color: #fff;
         background-color: #F67280;
         transition: all 0.3s ease-out;
+        cursor: pointer;
 
             :hover {
                 background-color: #355C7D;
             }
         
 
-        &.btn-primary {
+        &.btn--primary {
             color: #fff;
             background-color: #F67280;
             transition: all 0.3s ease-out;
@@ -33,7 +37,7 @@ export default function Button({ className, type, children }) {
             }
         }
 
-        &.btn-secondary {
+        &.btn--secondary {
             color: #fff;
             background-color: #355c7D;
             transition: all 0.3s ease-out;
@@ -43,7 +47,7 @@ export default function Button({ className, type, children }) {
             }
         }
 
-        &.btn-outline {
+        &.btn--outline {
             color: #f2f2f2;
             background-color: transparent;
             border: 1px solid #F67280;
@@ -53,11 +57,27 @@ export default function Button({ className, type, children }) {
                 color: #fff;
             }
         }
+
+        &.btn--medium {
+            padding: 12px 18px;
+            font-size: 1.2rem;
+        }
+
+        &.btn--large {
+            padding: 12px 54px;
+            font-size: 1.5rem;
+        }
     `
+
+export default function Button({ onClick, type, size, className, children }) {
+
+    const checkButtonStyle = STYLES.includes(type) ? type : STYLES[0];
+
+    const checkButtonSize = SIZES.includes(size) ? size : SIZES[0];
 
     return (
         <>
-            <Item className={`${type} ${className}`}>{children}</Item>
+            <Item className={`${checkButtonStyle} ${checkButtonSize} ${className}`}>{children}</Item>
         </>
     )
 }

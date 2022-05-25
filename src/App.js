@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Promo from './components/Promo';
 import Stories from './components/Stories';
+import Comment from './components/Comment';
 import CommentSection from './components/CommentSection';
 
 
@@ -56,12 +57,12 @@ const CommentSectionWrapper = styled.div`
   background-size: cover;
   background-position: 50%;
   display: flex;
-  justify-content: space-evenly;
   padding: 80px;
   gap: 20px;
+  flex-wrap: wrap;
 
-  @media (max-width: 800px) {
-    flex-wrap: wrap;
+  @media (max-width: 750px) {
+    flex-direction: column;
     gap: 55px;
   }
 `
@@ -78,22 +79,14 @@ export default function App() {
       <StoriesWrapper>
         <Stories />
       </StoriesWrapper>
-      <PromoWrapper>
+      <PromoWrapper>;
         <Promo>
         </Promo>
       </PromoWrapper>
 
       <CommentSectionWrapper>
-        <CommentSection name="Fernanda Teles" value="5" title='Lorem!!' comment='Lorem ipsum dolor sit amet, ct, consectetur adipiscing elit, sed do'/>
-        <CommentSection name="Fernanda Teles" value="5" title='Lorem!!' comment='Lorem ipsum dolor sit amet, ct, consectetur adipiscing elit, sed do'/>
-        <CommentSection name="Fernanda Teles" value="5" title='Lorem!!' comment='Lorem ipsum dolor sit amet, ct, consectetur adipiscing elit, sed do'/>
+        <CommentSection quantity={3} />
       </CommentSectionWrapper>
-
-      
-      <PromoWrapper>
-        <Promo>
-        </Promo>
-      </PromoWrapper>
     </>
   );
 }

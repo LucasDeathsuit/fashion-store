@@ -28,7 +28,7 @@ const StyledButton = styled(Button)`
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 600;
     opacity: 0;
-    transition: all 0.7s ease-in-out;
+    transition: all 0.3s ease-in-out;
     padding: 15px;
     border: 1px solid gray;
 
@@ -43,7 +43,7 @@ const Product = styled.img`
     object-position: top;
     border-radius: 8px 8px 0 0;
     aspect-ratio: 9/11;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-out;
 
     ${Item}:hover & {
         opacity: 0.5;
@@ -81,7 +81,7 @@ export default function ClothItem({ cloth }) {
             <ContentWrapper>
                 <ImageWrapper>
                     <Product src={`images/${cloth.icon}`} />
-                    <StyledButton type="btn-outline">Visitar</StyledButton>
+                    <StyledButton type="btn--outline">Visitar</StyledButton>
                 </ImageWrapper>
                 <Data>
                     <Price>R$120.00</Price>

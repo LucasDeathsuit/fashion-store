@@ -5,6 +5,7 @@ import CallIcon from '@mui/icons-material/Call';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import Button from './Button';
 
 
 
@@ -119,16 +120,14 @@ export default function Navbar() {
                     Atendimento
                 </NavItem>
                 <NavItem>
-                    <PersonIcon color='white' />
-                    Conta
-                </NavItem>
-                <NavItem>
                     <ShoppingCartIcon color='white' />
                     Carrinho
                 </NavItem>
+                <Button type={isShowingMenu ? 'btn--secondary' : 'btn--outline'}>
+                    <PersonIcon color='white' />
+                    Cadastrar
+                </Button>
             </RightMenuList>
-
-
         </Menu>
     )
 }

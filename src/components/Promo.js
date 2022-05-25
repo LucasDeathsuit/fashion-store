@@ -1,44 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Button from './Button'
 import ClothItem from './ClothItem'
+import { getPromoData } from './APIServices/APIServices'
 
-const data = [
-    {
-        name: "Blusas",
-        icon: "blusas.jpg",
-    },
-    {
-        name: "Casacos",
-        icon: "casacos.jpg",
-    },
-    {
-        name: "Sapatos",
-        icon: "sapatos.jpg",
-
-    }, 
-    {
-        name: "Blusas",
-        icon: "blusas.jpg",
-    },
-    {
-        name: "Casacos",
-        icon: "casacos.jpg",
-    }, 
-    {
-        name: "Blusas",
-        icon: "blusas.jpg",
-    },
-    {
-        name: "Sapatos",
-        icon: "sapatos.jpg",
-
-    }, 
-    {
-        name: "Blusas",
-        icon: "blusas.jpg",
-    },
-]
 
 const PromoItem = styled.div`
     display: flex;
@@ -70,6 +35,17 @@ const ItemsWrapper = styled.div`
 `
 
 export default function Promo() {
+
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await getPromoData();
+            setData(data);
+        }
+        fetchData();
+    }, [])
+    
     return (
         <PromoItem>
             <ItemsWrapper>
@@ -79,7 +55,7 @@ export default function Promo() {
                     })
                 }
             </ItemsWrapper>
-            <Button type="btn-primary">Veja Mais</Button>
+            <Button type="btn--primary" size="btn--large">Veja Mais</Button>
         </PromoItem>
     )
 }

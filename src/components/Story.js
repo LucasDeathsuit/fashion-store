@@ -1,6 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const Item = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-left: 0.5rem;
+margin-right: 0.5rem;
+cursor: pointer;
+`
+
 const Icone = styled.img`
     width: 62px;
     height: 62px;
@@ -9,15 +18,6 @@ const Icone = styled.img`
     background-color: white;
     padding: 2px;
     object-fit: cover;
-`
-
-const Item = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-margin-left: 0.5rem;
-margin-right: 0.5rem;
-cursor: pointer;
 `
 
 const Description = styled.div`
