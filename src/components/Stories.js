@@ -79,7 +79,6 @@ const RightArrow = styled.div`
 `
 
 
-
 export default function Stories() {
 
     const [scrollLeft, setScrollLeft] = useState(0);
@@ -130,7 +129,6 @@ export default function Stories() {
     }
 
     useEffect(() => {
-        refStories.current.addEventListener('scroll', handleStoriesScroll);
         const fetchData = async () => {
             try {
                 setData(await getStoriesData());
@@ -139,6 +137,7 @@ export default function Stories() {
             }
         }
         fetchData();
+        refStories.current.addEventListener('scroll', handleStoriesScroll);
     }, [])
 
     useEffect(() => {
@@ -163,11 +162,8 @@ export default function Stories() {
             setShowLeftArrow(false);
             setShowRightArrow(false);
         }
-
-
-
         return () => clearTimeout(timer);
-    }, [scrollLeft, windowSize])
+    }, [scrollLeft, windowSize, data])
 
 
     return (

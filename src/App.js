@@ -6,6 +6,7 @@ import Promo from './components/Promo';
 import Stories from './components/Stories';
 import Comment from './components/Comment';
 import CommentSection from './components/CommentSection';
+import Footer from './Footer';
 
 
 
@@ -67,6 +68,11 @@ const CommentSectionWrapper = styled.div`
   }
 `
 
+const FooterWrapper = styled.div`
+    background-color: #355c7d;
+    padding-top: 40px;
+`
+
 export default function App() {
   return (
     <>
@@ -79,7 +85,7 @@ export default function App() {
       <StoriesWrapper>
         <Stories />
       </StoriesWrapper>
-      <PromoWrapper>;
+      <PromoWrapper>
         <Promo>
         </Promo>
       </PromoWrapper>
@@ -87,6 +93,10 @@ export default function App() {
       <CommentSectionWrapper>
         <CommentSection quantity={3} />
       </CommentSectionWrapper>
+
+      <FooterWrapper>
+        <Footer />
+      </FooterWrapper>
     </>
   );
 }

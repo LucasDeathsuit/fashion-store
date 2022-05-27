@@ -74,8 +74,6 @@ const Paragraph = styled.p`
 
 export default function Comment({ borderColor, comment }) {
 
-  console.log(comment)
-
   return (
     <Commentary borderColor={borderColor}>
       <Content>

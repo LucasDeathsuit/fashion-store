@@ -19,8 +19,6 @@ export default function CommentSection({ quantity }) {
 
     }, [])
 
-    console.log(comments)
-
     return (
         <>
             {
