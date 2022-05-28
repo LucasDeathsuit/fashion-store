@@ -14,12 +14,13 @@ margin-right: auto;
 const Logo = styled.img`
     width: 100%;
     display: block;
+    border-radius: 50%;
 `
 
 export default function Hero() {
     return (
         <LogoWrapper>
-            <Logo src='images/LogoTeste.png'/>
+            <Logo src='images/Logo.png'/>
         </LogoWrapper>
     )
 }

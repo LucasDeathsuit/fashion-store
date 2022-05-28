@@ -93,6 +93,7 @@ const NavItem = styled.li`
 
 const Logo = styled.img`
     max-height: 70px;
+    border-radius: 50%;
 `
 
 
@@ -109,7 +110,7 @@ export default function Navbar() {
     return (
         <Menu>
             <LeftMenu>
-                <Logo alt='Logo' src="images/logoteste.png" />
+                <Logo alt='Logo' src="images/Logo.png" />
             </LeftMenu>
             <MenuIconWrapper onClick={() => setIsShowingMenu(!isShowingMenu)}>
                 {!isShowingMenu ? <MenuIcon /> : <CloseIcon />}
