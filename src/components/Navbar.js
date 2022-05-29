@@ -6,16 +6,27 @@ import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Button from './Button';
+import { Link } from '@reach/router'
 
 
 
 const Menu = styled.div`
+    position: fixed;
+    width: 100%;
+    background-color: #F67280;
+        
+    &.transparent {
+        background-color: #F6728090;
+    }
+`
+
+const MenuContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 99999;
     height: 85px;
-    width: 95%;
+    padding: 0 2.5%;
 `
 
 const LeftMenu = styled.div`
@@ -44,10 +55,14 @@ const RightMenuList = styled.ul`
         left: 0;
         height: calc(100vh - 85px);
         width: 100%;
-        background-color: #F6728090;
         padding: 10px 0px;
         transition: left 0.3s ease-out;
         left: ${props => props.active ? 0 : '-100%'};
+        background-color: #F67280;
+
+        &.transparent {
+            background-color: #F6728090;
+    }
     }
 `
 
@@ -96,39 +111,65 @@ const Logo = styled.img`
     border-radius: 50%;
 `
 
+const StyledLink = styled(Link)`
+    color: inherit;
+    text-decoration: none;
+`
+
 
 export default function Navbar() {
 
+
     const [isShowingMenu, setIsShowingMenu] = useState(false);
+    const [isTransparent, setIsTransparent] = useState(false);
 
     const handleResize = () => {
         setIsShowingMenu(false)
     }
 
+    const handleScroll = () => {
+        if (window.scrollY > 0) {
+            setIsTransparent("transparent")
+        } else {
+            setIsTransparent("")
+        }
+    }
+
     window.addEventListener('resize', handleResize);
 
+    window.addEventListener('scroll', handleScroll);
+
     return (
-        <Menu>
-            <LeftMenu>
-                <Logo alt='Logo' src="images/Logo.png" />
-            </LeftMenu>
-            <MenuIconWrapper onClick={() => setIsShowingMenu(!isShowingMenu)}>
-                {!isShowingMenu ? <MenuIcon /> : <CloseIcon />}
-            </MenuIconWrapper>
-            <RightMenuList active={isShowingMenu}>
-                <NavItem>
-                    <CallIcon color='white' />
-                    Atendimento
-                </NavItem>
-                <NavItem>
-                    <ShoppingCartIcon color='white' />
-                    Carrinho
-                </NavItem>
-                <Button type={isShowingMenu ? 'btn--secondary' : 'btn--outline'}>
-                    <PersonIcon color='white' />
-                    Cadastrar
-                </Button>
-            </RightMenuList>
+        <Menu className={`${isTransparent} ? "transparent" : " "`}>
+            <MenuContainer>
+                <LeftMenu>
+                    <StyledLink to="/">
+                        <Logo alt='Logo' src="images/Logo.png" />
+                    </StyledLink>
+                </LeftMenu>
+                <MenuIconWrapper onClick={() => setIsShowingMenu(!isShowingMenu)}>
+                    {!isShowingMenu ? <MenuIcon /> : <CloseIcon />}
+                </MenuIconWrapper>
+                <RightMenuList className={`${isTransparent} ? "transparent" : " "`} active={isShowingMenu}>
+                    <StyledLink to='/atendimento'>
+                        <NavItem>
+                            <CallIcon color='white' />
+                            Atendimento
+                        </NavItem>
+                    </StyledLink>
+                    <StyledLink to='/carrinho'>
+                        <NavItem>
+                            <ShoppingCartIcon color='white' />
+                            Carrinho
+                        </NavItem>
+                    </StyledLink>
+
+                    <Button type={isShowingMenu ? 'btn--secondary' : 'btn--outline'}>
+                        <PersonIcon color='white' />
+                        Cadastrar
+                    </Button>
+                </RightMenuList>
+            </MenuContainer>
         </Menu>
     )
 }

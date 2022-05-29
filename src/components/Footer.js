@@ -29,10 +29,12 @@ export default function Footer() {
         flex-direction: column;
         gap: 5px;
         align-items: center;
-        padding-bottom: 20px;
+        padding-bottom: 30px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: 0.8rem;
         color: #f2f2f2;
+        background-color: #355c7d;
+        padding-top: 40px;
     `
 
     const Anchor = styled.a`

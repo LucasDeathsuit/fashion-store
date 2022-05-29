@@ -75,16 +75,23 @@ const Description = styled.p`
     font-weight: 300;
 `
 
+const Link = styled.a`
+    color: white;
+    text-decoration: none;
+`
+
 export default function ClothItem({ cloth }) {
     return (
         <Item>
             <ContentWrapper>
                 <ImageWrapper>
                     <Product src={`images/${cloth.icon}`} />
-                    <StyledButton type="btn--outline">Visitar</StyledButton>
+
+                    <StyledButton type="btn--outline" size="btn--small"><Link href={cloth.link}>Visitar</Link></StyledButton>
+
                 </ImageWrapper>
                 <Data>
-                    <Price>R$120.00</Price>
+                    <Price>R${cloth.price}</Price>
                     <Description>{cloth.name}</Description>
                 </Data>
             </ContentWrapper>

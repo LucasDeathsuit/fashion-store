@@ -2,51 +2,75 @@
     "roupas": [
         {
             "name": "Sapatos",
-            "icon": "sapatos.jpg"
+            "icon": "sapatos.jpg",
+            "link": "/",
+            "price": "120,99"
         },
         {
             "name": "Blusas",
-            "icon": "blusas.jpg"
+            "icon": "blusas.jpg",
+            "link": "/",
+            "price": "59,99"
         },
         {
             "name": "Casacos",
-            "icon": "casacos.jpg"
+            "icon": "casacos.jpg",
+            "link": "/",
+            "price": "45,99"
         },
         {
             "name": "Sapatos",
-            "icon": "sapatos.jpg"
+            "icon": "sapatos.jpg",
+            "link": "/",
+            "price": "83,69"
         },
         {
             "name": "Blusas",
-            "icon": "blusas.jpg"
+            "icon": "blusas.jpg",
+            "link": "/",
+            "price": "99,99"
         },
         {
             "name": "Casacos",
-            "icon": "casacos.jpg"
+            "icon": "casacos.jpg",
+            "link": "/",
+            "price": "120,49"
         },
         {
             "name": "Sapatos",
-            "icon": "sapatos.jpg"
+            "icon": "sapatos.jpg",
+            "link": "/",
+            "price": "120,99"
         },
         {
             "name": "Blusas",
-            "icon": "blusas.jpg"
+            "icon": "blusas.jpg",
+            "link": "/",
+            "price": "120,99"
         },
         {
             "name": "Casacos",
-            "icon": "casacos.jpg"
+            "icon": "casacos.jpg",
+            "link": "/",
+            "price": "120,99"
         },
         {
             "name": "Blusas",
-            "icon": "blusas.jpg"
+            "icon": "blusas.jpg",
+            "link": "/",
+            "price": "120,99"
         },
         {
             "name": "Sapatos",
-            "icon": "sapatos.jpg"
+            "icon": "sapatos.jpg",
+            "link": "/",
+            "price": "120,99"
         },
         {
             "name": "Blusas",
-            "icon": "blusas.jpg"
+            "icon": "blusas.jpg",
+            "link": "/",
+            "price": "120,99"
         }
     ]
 }
