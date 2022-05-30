@@ -4,73 +4,97 @@
             "name": "Sapatos",
             "icon": "sapatos.jpg",
             "link": "/",
-            "price": "120,99"
+            "price": "120,99",
+            "title": "Sapatos Zagonel",
+            "sizes": ["P", "M", "G", "GG"]
         },
         {
             "name": "Blusas",
             "icon": "blusas.jpg",
             "link": "/",
-            "price": "59,99"
+            "price": "59,99",
+            "title": "Blusinha Brega",
+            "sizes": ["P", "M", "G", "GG"]
         },
         {
             "name": "Casacos",
             "icon": "casacos.jpg",
             "link": "/",
-            "price": "45,99"
+            "price": "45,99",
+            "title": "Casaquinho de Frio",
+            "sizes": ["P", "M", "G", "GG"]
         },
         {
             "name": "Sapatos",
             "icon": "sapatos.jpg",
             "link": "/",
-            "price": "83,69"
+            "price": "83,69",
+            "title": "Sapatos Zagonel",
+            "sizes": ["P", "M", "G", "GG"]
         },
         {
             "name": "Blusas",
             "icon": "blusas.jpg",
             "link": "/",
-            "price": "99,99"
+            "price": "99,99",
+            "title": "Blusinha Brega",
+            "sizes": ["P", "M", "G", "GG"]
         },
         {
             "name": "Casacos",
             "icon": "casacos.jpg",
             "link": "/",
-            "price": "120,49"
+            "price": "120,49",
+            "title": "Casaquinho de Frio",
+            "sizes": ["P", "M", "G", "GG"]
         },
         {
             "name": "Sapatos",
             "icon": "sapatos.jpg",
             "link": "/",
-            "price": "120,99"
+            "price": "120,99",
+            "title": "Sapatos Zagonel",
+            "sizes": ["P", "M", "G", "GG"]
         },
         {
             "name": "Blusas",
             "icon": "blusas.jpg",
             "link": "/",
-            "price": "120,99"
+            "price": "120,99",
+            "title": "Blusinha Brega",
+            "sizes": ["P", "M", "G", "GG"]
         },
         {
             "name": "Casacos",
             "icon": "casacos.jpg",
             "link": "/",
-            "price": "120,99"
+            "price": "120,99",
+            "title": "Casaquinho de Frio",
+            "sizes": ["P", "M", "G", "GG"]
         },
         {
             "name": "Blusas",
             "icon": "blusas.jpg",
             "link": "/",
-            "price": "120,99"
+            "price": "120,99",
+            "title": "Blusinha Brega",
+            "sizes": ["P", "M", "G", "GG"]
         },
         {
             "name": "Sapatos",
             "icon": "sapatos.jpg",
             "link": "/",
-            "price": "120,99"
+            "price": "120,99",
+            "title": "Sapatos Zagonel",
+            "sizes": ["P", "M", "G", "GG"]
         },
         {
             "name": "Blusas",
             "icon": "blusas.jpg",
             "link": "/",
-            "price": "120,99"
+            "price": "120,99",
+            "title": "Blusinha Brega",
+            "sizes": ["P", "M", "G", "GG"]
         }
     ]
 }

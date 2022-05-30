@@ -4,9 +4,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
-export default function Footer() {
-
-    const SocialMedia = styled.div`
+const SocialMedia = styled.div`
         display: flex;
         justify-content: center;
         color: #f2f2f2;
@@ -45,6 +43,10 @@ export default function Footer() {
             color: #1a1e65;
         }
     `
+
+export default function Footer() {
+
+    
 
     return (
         <FooterContent>

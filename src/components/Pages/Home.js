@@ -9,7 +9,7 @@ import CommentSection from '../CommentSection';
 import Footer from '../Footer';
 
 const HeroWrapper = styled.div`
-  height: calc(100vh - 85px);
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

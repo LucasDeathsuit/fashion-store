@@ -12,8 +12,10 @@ import { Link } from '@reach/router'
 
 const Menu = styled.div`
     position: fixed;
+    z-index: 999;
     width: 100%;
     background-color: #F67280;
+    transition: all 0.3s ;
         
     &.transparent {
         background-color: #F6728090;
