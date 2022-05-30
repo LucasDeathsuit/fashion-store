@@ -38,6 +38,8 @@ export default function Promo() {
 
     const [data, setData] = useState([])
 
+    const [cart, setCart] = useState([])
+
     useEffect(() => {
         const fetchData = async () => {
             const data = await getPromoData();
@@ -45,13 +47,25 @@ export default function Promo() {
         }
         fetchData();
     }, [])
-    
+
+    let localCart = localStorage.getItem("cart") ? localStorage.getItem("cart") : []
+
+    const addToCart = (cloth) => {
+        let tempLocalCart = []
+        if (localCart.length) {
+            tempLocalCart = JSON.parse(localCart)
+        }
+        tempLocalCart.push(cloth)
+        setCart(tempLocalCart)
+        localStorage.setItem("cart", JSON.stringify(tempLocalCart))
+    }
+
     return (
         <PromoItem>
             <ItemsWrapper>
                 {
                     data.map(cloth => {
-                        return <ClothItem cloth={cloth} />
+                        return <ClothItem onClick={addToCart} cloth={cloth} />
                     })
                 }
             </ItemsWrapper>

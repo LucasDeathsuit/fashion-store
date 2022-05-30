@@ -84,7 +84,7 @@ export default function Button({ onClick, type, size, className, children }) {
 
     return (
         <>
-            <Item className={`${checkButtonStyle} ${checkButtonSize} ${className}`}>{children}</Item>
+            <Item onClick={onClick} className={`${checkButtonStyle} ${checkButtonSize} ${className}`}>{children}</Item>
         </>
     )
 }

@@ -106,10 +106,10 @@ export default function CartItem({index, key, onChange, item }) {
 
     const handleQuantityChange = (value) => {
         const newValue = quantity + value;
-        if (newValue >= 0) {
+        if (newValue > 0) {
             setQuantity(newValue);
             onChange(newValue, index);
-        } else {
+        } else if (newValue == 0) {
             onChange(newValue, index);
         }
     }

@@ -17,4 +17,5 @@ async function getCommentData(quantity) {
     return commentsData.comments.slice(0, quantity);
 }
 
+
 export { getStoriesData , getPromoData, getCommentData}

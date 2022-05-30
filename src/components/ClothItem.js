@@ -80,14 +80,20 @@ const Link = styled.a`
     text-decoration: none;
 `
 
-export default function ClothItem({ cloth }) {
+
+export default function ClothItem({ onClick, cloth }) {
+
+    const handleButtonClick = () => {
+        onClick(cloth)
+    }
+
     return (
         <Item>
             <ContentWrapper>
                 <ImageWrapper>
                     <Product src={`images/${cloth.icon}`} />
 
-                    <StyledButton type="btn--outline" size="btn--small"><Link href={cloth.link}>Visitar</Link></StyledButton>
+                    <StyledButton onClick={handleButtonClick} type="btn--outline" size="btn--small">Carrinho++</StyledButton>
 
                 </ImageWrapper>
                 <Data>

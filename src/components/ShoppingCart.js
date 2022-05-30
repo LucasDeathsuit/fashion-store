@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import CartItem from './CartItem'
 
@@ -58,45 +58,35 @@ const Values = styled.div`
 
 export default function ShoppingCart() {
 
-    const [roupas, setRoupas] = useState([{
-        "name": "Sapatos",
-        "icon": "sapatos.jpg",
-        "link": "/",
-        "price": "120.99",
-        "title": "Sapatos Zagonel",
-        "sizes": ["P", "M", "G", "GG"],
-        "selectedSize": "GG",
-        "amount": 1
-    },
-    {
-        "name": "Blusas",
-        "icon": "blusas.jpg",
-        "link": "/",
-        "price": "59.99",
-        "title": "Blusinha Brega",
-        "sizes": ["PP", "P", "M", "G", "GG"],
-        "selectedSize": "M",
-        "amount": 1
-    },
-    {
-        "name": "Casacos",
-        "icon": "casacos.jpg",
-        "link": "/",
-        "price": "45.99",
-        "title": "Casaquinho de Frio",
-        "sizes": ["P", "M", "G", "GG"],
-        "selectedSize": "P",
-        "amount": 1
-    }])
+    const [cart, setCart] = useState([])
+    const cartRef = useRef();
 
     const handleValueChange = (value, key) => {
-        
-        const newRoupas = [...roupas];
-        newRoupas[key].amount = value;
 
-        setRoupas(newRoupas);
+        let newCart = [...cart];
+        if (value === 0) {
+            const valueToRemove = [newCart[key]]
+            newCart = newCart.filter(cart => !valueToRemove.includes(cart))
+        } else {
+            newCart[key].amount = value;
+        }
+        setCart(newCart);
 
     }
+
+    useEffect(() => {
+        cartRef.current = cart;
+    }, [cart])
+
+    useEffect(() => {
+
+        let localCart = localStorage.getItem("cart")
+        if (localCart) setCart(JSON.parse(localCart))
+
+        return function storeCart() {
+            localStorage.setItem("cart", JSON.stringify(cartRef.current))
+        }
+    }, [])
 
 
     return (
@@ -106,8 +96,7 @@ export default function ShoppingCart() {
                 <CartWrapper>
                     <CartList>
                         {
-                            roupas.map((item, index) => {
-                                console.log(index)
+                            cart.map((item, index) => {
                                 return <CartItem index={index} key={index} onChange={handleValueChange} item={item} />
                             }
                             )
@@ -116,7 +105,7 @@ export default function ShoppingCart() {
                     <Values>
                         <div>
                             Total: R${
-                                roupas.reduce(
+                                cart.reduce(
                                     (total, item) => {
                                         return (total + item.price * item.amount);
                                     }, 0
