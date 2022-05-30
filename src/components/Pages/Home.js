@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
 import Hero from '../Hero';
 import Navbar from '../Navbar';
@@ -58,6 +58,11 @@ const CommentSectionWrapper = styled.div`
 `
 
 export default function Home() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <>
       <Navbar />

@@ -8,9 +8,9 @@ const ShoppingCartContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding-top: 100px;
+    padding-top: 120px;
     padding-bottom: 20px;
+    min-height: calc(100vh - 141px - 130.33px);
 `
 
 const ShoppingCartWrapper = styled.div`
