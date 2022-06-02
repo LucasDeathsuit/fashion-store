@@ -69,7 +69,6 @@ export default function Promo() {
                     })
                 }
             </ItemsWrapper>
-            <Button type="btn--primary" size="btn--medium">Veja Mais</Button>
         </PromoItem>
     )
 }

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Button from './Button'
+import Input from './Input'
+import Textarea from './Textarea'
 
 const ContactSection = styled.div`
     display: flex;
@@ -84,80 +86,6 @@ const InputWrapper = styled.div`
         grid-column: 1/3;
     }
 `
-const Label = styled.label`
-    transition: all 0.3s;
-    position: absolute;
-    color: #c1c1c1;
-    transform: translate(10px, 13px);
-    padding: 0 2px;
-    font-weight: 500;
-`
-
-const StyledInput = styled.input`
-    background-color: #fff;
-    border: 2px solid #c1c1c1;
-    border-radius: 5px;
-    padding: 0.8rem 0.9rem;
-    outline: none;
-    
-
-    :focus {
-        border: 2px solid #355c7d;
-    }
-
-    &:focus + ${Label} {
-        transform: translate(3px, -19px);
-        color: #355c7d;
-    }
-
-    &:not(:placeholder-shown) + ${Label} {
-        color: #355c7d;
-        transform: translate(3px, -19px);
-    }
-    
-    ::placeholder {
-        opacity: 0;
-        transition: all 0.3s;
-    }
-
-    :focus::placeholder {
-        opacity: 100;
-    }
-`
-
-const Textarea = styled.textarea`
-    background-color: #f2f2f2;
-    outline: none;
-    border: 2px solid #c1c1c1;
-    border-radius: 5px;
-    padding: 0.8rem 0.9rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-
-    ::placeholder {
-        opacity: 0;
-        transition: all 0.3s;
-    }
-
-    :focus::placeholder {
-        opacity: 100;
-    }
-
-    :focus {
-        border: 2px solid #355c7d;
-    }
-
-    &:focus + ${Label} {
-        transform: translate(0px, -20px);
-        color: #355c7d;
-    }
-
-    &:not(:placeholder-shown) + ${Label} {
-        color: #355c7d;
-        transform: translate(0px, -20px);
-    }
-`
-
 
 
 export default function Contato() {
@@ -176,29 +104,24 @@ export default function Contato() {
                 </ContactLabelWrapper>
                 <ContactFormWrapper>
                     <Form>
-                        <InputWrapper>
-                            <StyledInput required placeholder="Insira seu nome" type='text' value={firstName}
-                                name="firstName" onChange={(e) => setFirstName(e.target.value)} />
-                            <Label>Nome</Label>
-                        </InputWrapper>
-                        <InputWrapper>
-                            <StyledInput required placeholder="Insira seu sobrenome " type='text' value={lastName} name="lastName" onChange={(e) => setLastName(e.target.value)} />
-                            <Label>Sobrenome</Label>
-                        </InputWrapper>
+                        <Input label="Nome" required placeholder="Insira seu nome" type='text' value={firstName} name="firstName" onChange={(e) => setFirstName(e.target.value)} />
+                        <Input label="Sobrenome" required placeholder="Insira seu sobrenome " type='text' value={lastName} name="lastName" onChange={(e) => setLastName(e.target.value)} />
+                        
                         <InputWrapper className='full-width'>
-                            <StyledInput required placeholder="Insira seu email" type="email" value={email} name="email" onChange={(e) => setEmail(e.target.value)} />
-                            <Label>E-mail</Label>
+                            <Input label="Email" required placeholder="Insira seu email" type="email" value={email} name="email" onChange={(e) => setEmail(e.target.value)} />
                         </InputWrapper>
+
                         <InputWrapper className='full-width'>
-                            <Textarea required placeholder="Insira sua mensagem" rows='4' cols='60' type="text" value={message} name="message" onChange={(e) => setMessage(e.target.value)} />
-                            <Label>Mensagem</Label>
+                            <Textarea label="Mensagem" required placeholder="Insira sua mensagem" rows='4' cols='60' value={message} name="message" onChange={(e) => setMessage(e.target.value)} />
                         </InputWrapper>
+
                         <InputWrapper className='full-width'>
                             <Button size="btn--large" type="btn-primary">Enviar</Button>
                         </InputWrapper>
+                        
                     </Form>
                 </ContactFormWrapper>
             </ContactWrapper >
-        </ContactSection>
+        </ContactSection >
     )
 } 
