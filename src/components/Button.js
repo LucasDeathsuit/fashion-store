@@ -70,13 +70,17 @@ const Item = styled.button`
         }
 
         &.btn--large {
-            padding: 12px 54px;
-            font-size: 1.5rem;
+            padding: 12px 5px;
+            font-size: 1.2rem;
             width: 100%;
+        }
+
+        &.btn--shadowed {
+            box-shadow: 0px 2px 5px 1px #34343490;
         }
     `
 
-export default function Button({ onClick, type, size, className, children }) {
+export default function Button({ onClick, shadow, type, size, className, children }) {
 
     const checkButtonStyle = STYLES.includes(type) ? type : STYLES[0];
 
@@ -84,7 +88,7 @@ export default function Button({ onClick, type, size, className, children }) {
 
     return (
         <>
-            <Item onClick={onClick} className={`${checkButtonStyle} ${checkButtonSize} ${className}`}>{children}</Item>
+            <Item onClick={onClick} className={`${shadow && "btn--shadowed"} ${checkButtonStyle} ${checkButtonSize} ${className}`}>{children}</Item>
         </>
     )
 }

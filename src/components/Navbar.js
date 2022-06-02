@@ -7,6 +7,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Button from './Button';
 import { Link } from '@reach/router'
+import Cadastro from './Pages/Cadastro';
 
 
 
@@ -124,6 +125,11 @@ export default function Navbar() {
 
     const [isShowingMenu, setIsShowingMenu] = useState(false);
     const [isTransparent, setIsTransparent] = useState(false);
+    const [isShowingModal, setIsShowingModal] = useState(false);
+
+    const handleOutsideClick = () => {
+        setIsShowingModal(false)
+    }
 
     const handleResize = () => {
         setIsShowingMenu(false)
@@ -166,12 +172,14 @@ export default function Navbar() {
                         </NavItem>
                     </StyledLink>
 
-                    <Button type={isShowingMenu ? 'btn--secondary' : 'btn--outline'}>
+                    <Button onClick={() => setIsShowingModal(true)} type={isShowingMenu ? 'btn--secondary' : 'btn--outline'}>
                         <PersonIcon color='white' />
                         Cadastrar
                     </Button>
                 </RightMenuList>
             </MenuContainer>
+
+            {isShowingModal && <Cadastro onClick={handleOutsideClick} />}
         </Menu>
     )
 }
