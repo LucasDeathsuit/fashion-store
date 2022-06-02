@@ -7,7 +7,10 @@ import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa'
 
 const SignUpModal = styled.div``
 
-const Content = styled.div``
+const Content = styled.div`
+    display: flex;
+    flex-direction: column;
+`
 
 const Title = styled.h2``
 

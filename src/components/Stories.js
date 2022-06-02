@@ -111,21 +111,27 @@ export default function Stories() {
 
     const handleArrowClick = (scrollOffset) => {
         const newScrollLeft = refStories.current.scrollLeft + scrollOffset
-
         setScrollLeft(newScrollLeft);
-
     }
 
     const handleResize = () => {
         setWindowSize(window.innerWidth);
-
     }
 
     window.addEventListener('resize', handleResize)
 
-
     const handleStoriesScroll = () => {
-        setScrollLeft(refStories.current.scrollLeft)
+        if(refStories.current.scrollLeft <= 0) {
+            setShowLeftArrow(false)
+        } else {
+            setShowLeftArrow(true)
+        }
+        if (refStories.current.scrollLeft >= refStories.current.scrollWidth - refStories.current.clientWidth) {
+            setShowRightArrow(false)
+        } else {
+            setShowRightArrow(true)
+        }
+        
     }
 
     useEffect(() => {
@@ -137,6 +143,8 @@ export default function Stories() {
             }
         }
         fetchData();
+
+        //This was bugging the arrow click
         refStories.current.addEventListener('scroll', handleStoriesScroll);
     }, [])
 
