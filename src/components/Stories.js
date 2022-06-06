@@ -118,10 +118,9 @@ export default function Stories() {
         setWindowSize(window.innerWidth);
     }
 
-    window.addEventListener('resize', handleResize)
 
     const handleStoriesScroll = () => {
-        if(refStories.current.scrollLeft <= 0) {
+        if (refStories.current.scrollLeft <= 0) {
             setShowLeftArrow(false)
         } else {
             setShowLeftArrow(true)
@@ -131,10 +130,14 @@ export default function Stories() {
         } else {
             setShowRightArrow(true)
         }
-        
+
     }
 
     useEffect(() => {
+
+        //Adding Resize Event Listener
+        window.addEventListener('resize', handleResize)
+        //Fetching Stories Data
         const fetchData = async () => {
             try {
                 setData(await getStoriesData());
@@ -144,8 +147,15 @@ export default function Stories() {
         }
         fetchData();
 
-        //This was bugging the arrow click
-        refStories.current.addEventListener('scroll', handleStoriesScroll);
+        //Adding Scroll Event Listener to 
+        const storiesEventListenerVariable = refStories.current
+        storiesEventListenerVariable.addEventListener('scroll', handleStoriesScroll);
+
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+            storiesEventListenerVariable.removeEventListener('scroll', handleStoriesScroll);
+        }
     }, [])
 
     useEffect(() => {

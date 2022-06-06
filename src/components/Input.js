@@ -17,7 +17,7 @@ const Label = styled.label`
         transform: translate(10px, 13px);
         padding: 0 2px;
         font-weight: 500;
-
+        pointer-events: none;
 `
 
 const StyledInput = styled.input`
@@ -45,6 +45,7 @@ const StyledInput = styled.input`
         
         ::placeholder {
             opacity: 0;
+            color: #c1c1c1;
             transition: all 0.3s;
         }
 
@@ -55,12 +56,12 @@ const StyledInput = styled.input`
     `
 
 
-export default function Input({ type, required, placeholder, value, name, onChange, label }) {
+export default function Input({ autoComplete, type, required, placeholder, value, name, onChange, label }) {
 
     return (
         <Wrapper>
-            <StyledInput type={type} required={required} placeholder={placeholder} value={value} name={name} onChange={onChange} />
-            <Label for={name}>{label}</Label>
+            <StyledInput autoComplete={autoComplete} type={type} required={required} placeholder={placeholder} value={value} name={name} onChange={onChange} />
+            <Label>{label}</Label>
         </Wrapper>
     )
 

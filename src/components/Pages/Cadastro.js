@@ -118,6 +118,8 @@ const handleIconColor = socialMedia => {
             return "#DB4437"
         case "linkedin":
             return "#0A66C2"
+        default:
+            return "#000"
     }
 }
 
@@ -174,15 +176,15 @@ export default function Cadastro({ onClick }) {
                             {isLogin ? "LOGIN" : "SIGN UP"}
                         </Title>
                         <InputWrapper>
-                            <Input className="fields" label="Email" required placeholder="Insira seu email" type="email" value={email} name="email" onChange={(e) => setEmail(e.target.value)} />
+                            <Input autoComplete="email" className="fields" label="Email" required placeholder="Insira seu email" type="email" value={email} name="email" onChange={(e) => setEmail(e.target.value)} />
                         </InputWrapper>
                         <InputWrapper>
-                            <Input className="fields" label="Password" required placeholder="Insira sua senha" type="password" value={password} name="password" onChange={(e) => setPassword(e.target.value)} />
+                            <Input autoComplete="current-password" className="fields" label="Password" required placeholder="Insira sua senha" type="password" value={password} name="password" onChange={(e) => setPassword(e.target.value)} />
                         </InputWrapper>
                         {
                             isLogin &&
                             <RememberMe>
-                                <label for="rememberme">
+                                <label htmlFor="rememberme">
                                     <input type="checkbox" name="rememberme" id='rememberme' />
                                     Remember me?
                                 </label>

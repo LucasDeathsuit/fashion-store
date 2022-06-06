@@ -4,7 +4,6 @@ import Hero from '../Hero';
 import Navbar from '../Navbar';
 import Promo from '../Promo';
 import Stories from '../Stories';
-import Comment from '../Comment';
 import CommentSection from '../CommentSection';
 import Footer from '../Footer';
 

@@ -75,11 +75,6 @@ const Description = styled.p`
     font-weight: 300;
 `
 
-const Link = styled.a`
-    color: white;
-    text-decoration: none;
-`
-
 
 export default function ClothItem({ onClick, cloth }) {
 

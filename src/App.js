@@ -3,8 +3,7 @@ import Home from './components/Pages/Home';
 import Atendimento from './components/Pages/Atendimento'
 import Cadastro from './components/Pages/Cadastro'
 import Carrinho from './components/Pages/Carrinho'
-import Item from './components/Pages/Item'
-import { Router, Link } from '@reach/router'
+import { Router } from '@reach/router'
 
 export default function App() {
   return (

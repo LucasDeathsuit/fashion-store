@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Button from './Button'
 import ClothItem from './ClothItem'
 import { getPromoData } from './APIServices/APIServices'
 
@@ -38,7 +37,7 @@ export default function Promo() {
 
     const [data, setData] = useState([])
 
-    const [cart, setCart] = useState([])
+    const [ , setCart] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -65,7 +64,7 @@ export default function Promo() {
             <ItemsWrapper>
                 {
                     data.map(cloth => {
-                        return <ClothItem onClick={addToCart} cloth={cloth} />
+                        return <ClothItem key={cloth.id} onClick={addToCart} cloth={cloth} />
                     })
                 }
             </ItemsWrapper>

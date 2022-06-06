@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import StarIcon from '@mui/icons-material/Star';
 import Rating from './Rating';
 
 const Commentary = styled.div`

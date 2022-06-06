@@ -17,9 +17,9 @@ export default function Rating({value}) {
 
     for (let index = 0; index < 5; index++) {
         if (index < value) {
-            stars.push(<StarIcon sx={{color: "gold"}}/>)
+            stars.push(<StarIcon key={index} sx={{color: "gold"}}/>)
         } else {
-            stars.push(<StarIcon sx={{color: "gray"}}/>)
+            stars.push(<StarIcon key={index} sx={{color: "gray"}}/>)
         }
     }
 

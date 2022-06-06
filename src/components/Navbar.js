@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CallIcon from '@mui/icons-material/Call';
@@ -143,9 +143,18 @@ export default function Navbar() {
         }
     }
 
-    window.addEventListener('resize', handleResize);
 
-    window.addEventListener('scroll', handleScroll);
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+
+        window.addEventListener('scroll', handleScroll);
+
+        return function cleanUp() {
+            window.removeEventListener('resize', handleResize)
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
 
     return (
         <Menu className={`${isTransparent} ? "transparent" : " "`}>

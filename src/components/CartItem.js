@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const CartContainer = styled.div`
@@ -96,12 +96,11 @@ const Price = styled.div`
     }
 `
 
-export default function CartItem({index, key, onChange, item }) {
+export default function CartItem({index, onChange, item }) {
 
-    const { selectedSize, amount, title, icon, price, sizes } = item;
+    const { amount, title, icon, price, sizes } = item;
 
     const [quantity, setQuantity] = useState(amount)
-    const [size, setSize] = useState(selectedSize)
 
 
     const handleQuantityChange = (value) => {
@@ -109,7 +108,7 @@ export default function CartItem({index, key, onChange, item }) {
         if (newValue > 0) {
             setQuantity(newValue);
             onChange(newValue, index);
-        } else if (newValue == 0) {
+        } else if (newValue === 0) {
             onChange(newValue, index);
         }
     }
@@ -127,7 +126,7 @@ export default function CartItem({index, key, onChange, item }) {
             </Description>
             <Select>
                 {sizes.map(option => {
-                    return <option value={option}>{option}</option>
+                    return <option key={option} value={option}>{option}</option>
                 })}
             </Select>
             <Quantity>

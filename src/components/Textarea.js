@@ -10,13 +10,13 @@ const Wrapper = styled.div`
 
 
 const Label = styled.label`
-
         transition: all 0.3s;
         position: absolute;
         color: #c1c1c1;
         transform: translate(10px, 13px);
         padding: 0 2px;
         font-weight: 500;
+        pointer-events: none;
 
 `
 const StyledTextarea = styled.textarea`
@@ -35,6 +35,7 @@ const StyledTextarea = styled.textarea`
 
     :focus::placeholder {
         opacity: 100;
+        color: #c1c1c1;
     }
 
     :focus {
@@ -57,7 +58,7 @@ export default function Textarea({rows, cols, required, placeholder, value, name
     return (
         <Wrapper>
             <StyledTextarea rows={rows} cols={cols} required={required} placeholder={placeholder} value={value} name={name} onChange={onChange} />
-            <Label for={name}>{label}</Label>
+            <Label>{label}</Label>
         </Wrapper>
     )
 

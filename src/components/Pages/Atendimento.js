@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
 import Contato from '../Contato'
-import Cadastro from './Cadastro'
 
 export default function Atendimento() {
 

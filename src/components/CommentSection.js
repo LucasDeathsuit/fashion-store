@@ -17,13 +17,14 @@ export default function CommentSection({ quantity }) {
 
         fetchData();
 
-    }, [])
+    }, [quantity])
+
 
     return (
         <>
             {
-                comments.map((comment) => {
-                    return <Comment comment={comment} />
+                comments.map((comment, index) => {
+                    return <Comment key={index} comment={comment} />
                 })
             }
         </>
