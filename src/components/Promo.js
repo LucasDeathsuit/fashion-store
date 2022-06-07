@@ -40,8 +40,6 @@ export default function Promo() {
 
     const [, setCart] = useState([])
 
-    const [isAlerting, setIsAlerting] = useState(false)
-
 
     useEffect(() => {
         const fetchData = async () => {
@@ -58,20 +56,24 @@ export default function Promo() {
         if (localCart.length) {
             tempLocalCart = JSON.parse(localCart)
         }
-        tempLocalCart.push(cloth)
-        setCart(tempLocalCart)
-        localStorage.setItem("cart", JSON.stringify(tempLocalCart))
+        if (!checkItemOnCart(cloth)) {
+            tempLocalCart.push(cloth)
+            setCart(tempLocalCart)
+            localStorage.setItem("cart", JSON.stringify(tempLocalCart))
+        }
+    }
 
-        setIsAlerting(true)
+    const checkItemOnCart = (cloth) => {
+        let tempLocalCart = JSON.parse(localCart)
+        return tempLocalCart.some(cartItem => cartItem.id === cloth.id)
     }
 
     return (
         <PromoItem>
-            
             <ItemsWrapper>
                 {
                     data.map(cloth => {
-                        return <ClothItem key={cloth.id} onClick={addToCart} cloth={cloth} />
+                        return <ClothItem addedToCart={() => checkItemOnCart(cloth)} key={cloth.id} onClick={addToCart} cloth={cloth} />
                     })
                 }
             </ItemsWrapper>

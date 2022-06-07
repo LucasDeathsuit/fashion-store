@@ -93,18 +93,15 @@ const Description = styled.p`
 `
 
 
-export default function ClothItem({ onClick, cloth }) {
+export default function ClothItem({addedToCart, onClick, cloth }) {
 
 
     const handleButtonClick = () => {
         onClick(cloth)
         setAddedToCart(true)
-        setTimeout(() => {
-            setAddedToCart(false)
-        }, 2000)
     }
 
-    const [isAddedToCart, setAddedToCart] = useState(false);
+    const [isAddedToCart, setAddedToCart] = useState(addedToCart);
 
     return (
         <Item>
