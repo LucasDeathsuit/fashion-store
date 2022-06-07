@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import styled from 'styled-components'
 import Button from './Button'
 
@@ -31,10 +32,26 @@ const StyledButton = styled(Button)`
     transition: all 0.3s ease-in-out;
     padding: 15px;
     border: 1px solid gray;
+    overflow: hidden;
 
     ${Item}:hover & {
         opacity: 1;
     }
+
+    
+`
+
+const CartBottom = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: #355c7d;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all .5s;
+    left: ${props => props.addedToCart ? `0%` : `-102%`};
 `
 
 const Product = styled.img`
@@ -78,9 +95,16 @@ const Description = styled.p`
 
 export default function ClothItem({ onClick, cloth }) {
 
+
     const handleButtonClick = () => {
         onClick(cloth)
+        setAddedToCart(true)
+        setTimeout(() => {
+            setAddedToCart(false)
+        }, 2000)
     }
+
+    const [isAddedToCart, setAddedToCart] = useState(false);
 
     return (
         <Item>
@@ -88,7 +112,10 @@ export default function ClothItem({ onClick, cloth }) {
                 <ImageWrapper>
                     <Product src={`images/${cloth.icon}`} />
 
-                    <StyledButton onClick={handleButtonClick} type="btn--outline" size="btn--small">Carrinho++</StyledButton>
+                    <StyledButton onClick={handleButtonClick} type="btn--outline" size="btn--medium">
+                        Add to Cart
+                        <CartBottom addedToCart={isAddedToCart}>Added<ShoppingCartIcon color='white' /></CartBottom>
+                    </StyledButton>
 
                 </ImageWrapper>
                 <Data>

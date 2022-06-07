@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import ClothItem from './ClothItem'
 import { getPromoData } from './APIServices/APIServices'
+import Alert from './Alert'
 
 
 const PromoItem = styled.div`
@@ -37,7 +38,10 @@ export default function Promo() {
 
     const [data, setData] = useState([])
 
-    const [ , setCart] = useState([])
+    const [, setCart] = useState([])
+
+    const [isAlerting, setIsAlerting] = useState(false)
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -57,10 +61,13 @@ export default function Promo() {
         tempLocalCart.push(cloth)
         setCart(tempLocalCart)
         localStorage.setItem("cart", JSON.stringify(tempLocalCart))
+
+        setIsAlerting(true)
     }
 
     return (
         <PromoItem>
+            
             <ItemsWrapper>
                 {
                     data.map(cloth => {
