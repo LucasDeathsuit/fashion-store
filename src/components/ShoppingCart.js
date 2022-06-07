@@ -88,6 +88,10 @@ export default function ShoppingCart() {
         }
     }, [])
 
+    const clearCart = () => {
+        setCart([])
+        localStorage.setItem("cart", [])
+    }
 
     return (
         <ShoppingCartContainer>
@@ -103,15 +107,27 @@ export default function ShoppingCart() {
                         }
                     </CartList>
                     <Values>
-                        <div>
-                            Total: R${
-                                cart.reduce(
-                                    (total, item) => {
-                                        return (total + item.price * item.amount);
-                                    }, 0
-                                ).toFixed(2)
-                            }
-                        </div>
+                        {
+                            cart.length !== 0 ?
+                                <>
+                                    <div>
+                                        Total: R${
+                                            cart.reduce(
+                                                (total, item) => {
+                                                    return (total + item.price * item.amount);
+                                                }, 0
+                                            ).toFixed(2)
+                                        }
+                                    </div>
+                                    <div>
+                                        <div onClick={clearCart}>
+                                            Limpar Carrinho
+                                        </div>
+                                    </div>
+                                </>
+                                :
+                                null
+                        }
                     </Values>
                 </CartWrapper>
             </ShoppingCartWrapper>
