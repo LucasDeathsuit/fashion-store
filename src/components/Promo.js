@@ -51,19 +51,19 @@ export default function Promo() {
 
     let localCart = localStorage.getItem("cart") ? localStorage.getItem("cart") : []
 
-    const addToCart = (cloth) => {
+    const addOrRemoveFromCart = (cloth) => {
         let tempLocalCart = []
         if (localCart.length) {
             tempLocalCart = JSON.parse(localCart)
         }
-        if (!checkItemOnCart(cloth)) {
+        if (!isItemOnCart(cloth)) {
             tempLocalCart.push(cloth)
             setCart(tempLocalCart)
             localStorage.setItem("cart", JSON.stringify(tempLocalCart))
         }
     }
 
-    const checkItemOnCart = (cloth) => {
+    const isItemOnCart = (cloth) => {
         let tempLocalCart = JSON.parse(localCart)
         return tempLocalCart.some(cartItem => cartItem.id === cloth.id)
     }
@@ -73,7 +73,7 @@ export default function Promo() {
             <ItemsWrapper>
                 {
                     data.map(cloth => {
-                        return <ClothItem addedToCart={() => checkItemOnCart(cloth)} key={cloth.id} onClick={addToCart} cloth={cloth} />
+                        return <ClothItem addedToCart={() => isItemOnCart(cloth)} key={cloth.id} onClick={addOrRemoveFromCart} cloth={cloth} />
                     })
                 }
             </ItemsWrapper>

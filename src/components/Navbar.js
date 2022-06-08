@@ -8,8 +8,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Button from './Button';
 import { Link } from '@reach/router'
 import Cadastro from './Pages/Cadastro';
-
-
+import ShoppingCart from './ShoppingCart';
 
 const Menu = styled.div`
     position: fixed;

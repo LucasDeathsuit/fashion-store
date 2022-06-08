@@ -94,14 +94,14 @@ const Description = styled.p`
 
 
 export default function ClothItem({addedToCart, onClick, cloth }) {
+    
 
+    const [isAddedToCart, setAddedToCart] = useState(addedToCart);
 
     const handleButtonClick = () => {
         onClick(cloth)
         setAddedToCart(true)
     }
-
-    const [isAddedToCart, setAddedToCart] = useState(addedToCart);
 
     return (
         <Item>
@@ -113,6 +113,7 @@ export default function ClothItem({addedToCart, onClick, cloth }) {
                         Add to Cart
                         <CartBottom addedToCart={isAddedToCart}>Added<ShoppingCartIcon color='white' /></CartBottom>
                     </StyledButton>
+
 
                 </ImageWrapper>
                 <Data>

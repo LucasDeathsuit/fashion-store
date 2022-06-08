@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
+import Button from './Button'
 import CartItem from './CartItem'
-
+import EmptyCart from './EmptyCart'
 
 
 const ShoppingCartContainer = styled.div`
@@ -17,8 +18,13 @@ const ShoppingCartWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     width: 80%;
+
+    @media (max-width: 720px) {
+        width: 100%;
+    }
+
 `
 
 const Title = styled.h1`
@@ -52,7 +58,16 @@ const Values = styled.div`
         padding: 15px;
         border-radius: 8px;
     }
+
+    & > * {
+        margin: 1rem;
+    }
     
+`
+
+const Image = styled.img`
+    width: 100%;
+    max-height: 400px;
 `
 
 
@@ -71,7 +86,7 @@ export default function ShoppingCart() {
             newCart[key].amount = value;
         }
         setCart(newCart);
-
+        localStorage.setItem("cart", [])
     }
 
     useEffect(() => {
@@ -105,6 +120,10 @@ export default function ShoppingCart() {
                             }
                             )
                         }
+                        {
+                            cart.length === 0 &&
+                            <EmptyCart />
+                        }
                     </CartList>
                     <Values>
                         {
@@ -119,11 +138,9 @@ export default function ShoppingCart() {
                                             ).toFixed(2)
                                         }
                                     </div>
-                                    <div>
-                                        <div onClick={clearCart}>
-                                            Limpar Carrinho
-                                        </div>
-                                    </div>
+                                    <Button type='btn--secondary' onClick={clearCart}>
+                                        Limpar Carrinho
+                                    </Button>
                                 </>
                                 :
                                 null
