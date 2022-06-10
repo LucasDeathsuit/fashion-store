@@ -1,7 +1,7 @@
 {
   "name": "site-moda",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://lucasdeathsuit.github.io/fashion-store/",
   "dependencies": {
     "@emotion/react": "^11.7.1",
