@@ -13,6 +13,7 @@ const Wrapper = styled.div`
 const CartImage = styled.img`
     max-width: 500px;
     width: 100%;
+    max-height: calc(100vh - 250px);
 `
 const Title = styled.h2`
     font-size: 2rem;

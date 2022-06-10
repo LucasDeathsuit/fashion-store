@@ -64,8 +64,11 @@ export default function Promo() {
     }
 
     const isItemOnCart = (cloth) => {
-        let tempLocalCart = JSON.parse(localCart)
-        return tempLocalCart.some(cartItem => cartItem.id === cloth.id)
+        let tempLocalCart 
+        if (localCart.length) {
+            tempLocalCart = JSON.parse(localCart)
+            return tempLocalCart.some(cartItem => cartItem.id === cloth.id)
+        }
     }
 
     return (

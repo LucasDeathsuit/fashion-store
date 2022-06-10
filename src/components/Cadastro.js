@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import Button from '../Button'
-import Input from '../Input'
+import Button from './Button'
+import Input from './Input'
 import { AiOutlineGoogle } from 'react-icons/ai'
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa'
 import CloseIcon from '@mui/icons-material/Close';
@@ -164,6 +164,10 @@ export default function Cadastro({ onClick }) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
     return (
         <SignUpModal onClick={onClick}>
             <ContentWrapper onClick={e => e.stopPropagation()}>
@@ -171,7 +175,7 @@ export default function Cadastro({ onClick }) {
                     <CloseIcon />
                 </CloseIconWrapper>
                 <Content>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                         <Title>
                             {isLogin ? "LOGIN" : "SIGN UP"}
                         </Title>

@@ -7,7 +7,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Button from './Button';
 import { Link } from '@reach/router'
-import Cadastro from './Pages/Cadastro';
+import Cadastro from './Cadastro';
 import ShoppingCart from './ShoppingCart';
 
 const Menu = styled.div`
