@@ -8,7 +8,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import Button from './Button';
 import { Link } from '@reach/router'
 import Cadastro from './Cadastro';
-import ShoppingCart from './ShoppingCart';
 
 const Menu = styled.div`
     position: fixed;
@@ -159,7 +158,7 @@ export default function Navbar() {
         <Menu className={`${isTransparent} ? "transparent" : " "`}>
             <MenuContainer>
                 <LeftMenu>
-                    <StyledLink to="/">
+                    <StyledLink to="/fashion-store/">
                         <Logo alt='Logo' src="images/Logo.png" />
                     </StyledLink>
                 </LeftMenu>
@@ -167,13 +166,13 @@ export default function Navbar() {
                     {!isShowingMenu ? <MenuIcon /> : <CloseIcon />}
                 </MenuIconWrapper>
                 <RightMenuList className={`${isTransparent} ? "transparent" : " "`} active={isShowingMenu}>
-                    <StyledLink to='/atendimento'>
+                    <StyledLink to='/fashion-store/atendimento'>
                         <NavItem>
                             <CallIcon color='white' />
                             Atendimento
                         </NavItem>
                     </StyledLink>
-                    <StyledLink to='/carrinho'>
+                    <StyledLink to='/fashion-store/carrinho'>
                         <NavItem>
                             <ShoppingCartIcon color='white' />
                             Carrinho

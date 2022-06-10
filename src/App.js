@@ -6,10 +6,11 @@ import { Router } from '@reach/router'
 
 export default function App() {
   return (
-    <Router basepath='/fashion-store'>
-      <Home path='/' />
+    <Router basepath='/fashion-store/'>
+      <Home path='/' exact />
       <Atendimento path='/atendimento' />
       <Carrinho path='/carrinho' />
+
     </Router>
   );
 }
