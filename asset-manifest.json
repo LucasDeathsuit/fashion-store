@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/fashion-store/static/js/main.f43875ed.chunk.js",
-    "main.js.map": "/fashion-store/static/js/main.f43875ed.chunk.js.map",
+    "main.js": "/fashion-store/static/js/main.c19b1399.chunk.js",
+    "main.js.map": "/fashion-store/static/js/main.c19b1399.chunk.js.map",
     "runtime-main.js": "/fashion-store/static/js/runtime-main.dca4e1d1.js",
     "runtime-main.js.map": "/fashion-store/static/js/runtime-main.dca4e1d1.js.map",
     "static/js/2.ba42b42b.chunk.js": "/fashion-store/static/js/2.ba42b42b.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.dca4e1d1.js",
     "static/js/2.ba42b42b.chunk.js",
-    "static/js/main.f43875ed.chunk.js"
+    "static/js/main.c19b1399.chunk.js"
   ]
 }
