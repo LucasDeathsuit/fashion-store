@@ -6,7 +6,7 @@ import { Router } from '@reach/router'
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/fashion-store">
       <Home path='/' />
       <Atendimento path='/atendimento' />
       <Carrinho path='/carrinho' />
