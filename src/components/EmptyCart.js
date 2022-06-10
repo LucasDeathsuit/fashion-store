@@ -32,7 +32,7 @@ export default function EmptyCart() {
         <Wrapper>
             <CartImage src="images/emptyCart.png" />
             <Title>You Cart Is Empty</Title>
-            <StyledLink to='/fashion-store'>
+            <StyledLink to='/fashion-store/'>
                 <Button type="btn--primary">Continue Shopping</Button>
             </StyledLink>
         </Wrapper>
