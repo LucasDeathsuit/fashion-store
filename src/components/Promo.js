@@ -9,27 +9,35 @@ const PromoItem = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
     gap: 3rem;
+    padding: 50px;
+    margin: auto;
+    background-color: #f0f6fa;
+    background: rgb(255,228,252);
+    background: linear-gradient(90deg, #8ec5fc 0%, #E0c3fc 100%);
 
 `
 
 const ItemsWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(100px, 300px));
     gap: 1rem;
     align-items: stretch;
+    align-self: center;
     justify-content: center;
     max-width: 1200px;
 
     @media (max-width: 1300px) {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, minmax(100px, 300px));
+        
     }
 
-    @media (max-width: 1000px) {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 10px;
+    @media (max-width: 800px) {
+        grid-template-columns: repeat(2, minmax(100px, 300px));
+    }
+
+    @media (max-width: 600px) {
+        grid-template-columns: minmax(100px, 300px);
     }
 
 `
@@ -64,7 +72,7 @@ export default function Promo() {
     }
 
     const isItemOnCart = (cloth) => {
-        let tempLocalCart 
+        let tempLocalCart
         if (localCart.length) {
             tempLocalCart = JSON.parse(localCart)
             return tempLocalCart.some(cartItem => cartItem.id === cloth.id)
@@ -75,9 +83,11 @@ export default function Promo() {
         <PromoItem>
             <ItemsWrapper>
                 {
-                    data.map(cloth => {
-                        return <ClothItem addedToCart={() => isItemOnCart(cloth)} key={cloth.id} onClick={addOrRemoveFromCart} cloth={cloth} />
-                    })
+                    data ?
+                        data.map(cloth => {
+                            return <ClothItem addedToCart={() => isItemOnCart(cloth)} key={cloth.id} onClick={addOrRemoveFromCart} cloth={cloth} />
+                        })
+                        : null
                 }
             </ItemsWrapper>
         </PromoItem>

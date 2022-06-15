@@ -7,8 +7,6 @@ const Item = styled.div`
     background-color: #f2f2f2;
     padding: 10px;
     border-radius: 8px;
-    width: 100%;    
-    max-width: 250px;
 `
 
 const ContentWrapper = styled.div`

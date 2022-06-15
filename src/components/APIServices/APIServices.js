@@ -2,13 +2,13 @@
 async function getStoriesData() {
     const data = await fetch('./RoupasStories.json');
     const roupasData = await data.json()
-    return roupasData.roupas;
+    return roupasData.roupas.sapatos;
 }
 
-async function getPromoData() {
+async function getPromoData(category) {
     const data = await fetch('./RoupasStories.json');
     const roupasData = await data.json();
-    return roupasData.roupas;
+    return roupasData.roupas[category];
 }
 
 async function getCommentData(quantity) {

@@ -26,10 +26,6 @@ const StoriesWrapper = styled.div`
 `
 
 const PromoWrapper = styled.div`
-  padding: 50px;
-  background-color: #f0f6fa;
-  background: rgb(255,228,252);
-  background: linear-gradient(90deg, #8ec5fc 0%, #E0c3fc 100%);
 
   
   @media (max-width: 800px) {
@@ -71,10 +67,7 @@ export default function Home() {
       <StoriesWrapper>
         <Stories />
       </StoriesWrapper>
-      <PromoWrapper>
-        <Promo>
-        </Promo>
-      </PromoWrapper>
+      <Promo />
 
       <CommentSectionWrapper>
         <CommentSection quantity={3} />
