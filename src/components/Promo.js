@@ -51,7 +51,7 @@ export default function Promo() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getPromoData();
+            const data = await getPromoData("tudo");
             setData(data);
         }
         fetchData();

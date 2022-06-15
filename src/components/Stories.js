@@ -140,9 +140,10 @@ export default function Stories() {
         //Fetching Stories Data
         const fetchData = async () => {
             try {
-                setData(await getStoriesData());
+                setData(await getStoriesData("sapatos"));
             } catch (err) {
                 console.log(err)
+            } finally {
             }
         }
         fetchData();
@@ -157,6 +158,9 @@ export default function Stories() {
             storiesEventListenerVariable.removeEventListener('scroll', handleStoriesScroll);
         }
     }, [])
+
+
+    console.log(data)
 
     useEffect(() => {
         let timer;

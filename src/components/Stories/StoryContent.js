@@ -1,3 +1,4 @@
+import { Link } from "@reach/router";
 import React from "react";
 import styled from "styled-components";
 
@@ -48,6 +49,20 @@ const ClothType = styled.img`
 const ContentBottom = styled.div`
 `
 
+const StyledLink = styled(Link)`
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+
+    :hover {
+        color: #5f7f9f;
+    }
+`
+
 export default function StoryContent({ imagePath, name }) {
 
 
@@ -62,8 +77,10 @@ export default function StoryContent({ imagePath, name }) {
                 <>
                     <Content src={`images/${imagePath}`} />
                     <ContentNav>
-                        <ClothType alt={name} src={`images/${imagePath}`} />
-                        {name}
+                        <StyledLink to={`./${name.toLowerCase()}`}>
+                            <ClothType alt={name} src={`images/${imagePath}`} />
+                            {name}
+                        </StyledLink>
                     </ContentNav>
                     <ContentBottom>
 

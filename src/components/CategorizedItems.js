@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { getPromoData } from "./APIServices/APIServices"
 import ClothItem from "./ClothItem";
 import { Link } from "@reach/router"
+import Error404 from "./404/Error404";
 
 const Wrapper = styled.div`
     display: flex;
@@ -63,11 +64,15 @@ const ItemsList = styled.div`
 const List = styled.ul`
     list-style: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 0.3rem;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
 
+    @media (max-width: 700px) {
+        justify-content: center;
+        flex-direction: row;
+    }
     
 `
 
@@ -80,9 +85,7 @@ const ListTitle = styled.h2`
 const StyledLink = styled(Link)`
     text-decoration: none;
     color: #000;
-    margin: 0.5rem;::after {
-        content: " |";
-    }
+    margin: 0.5rem;
     
     :hover {
         color: #f67280;
@@ -93,13 +96,14 @@ export default function CategorizedItems({ category }) {
 
     const [data, setData] = useState([])
 
+
     useEffect(() => {
         const fetchData = async () => {
             const data = await getPromoData(category)
             setData(data)
         }
         fetchData();
-    }, [])
+    }, [category])
 
     return (
         <Wrapper>
@@ -108,36 +112,36 @@ export default function CategorizedItems({ category }) {
                     <ListTitle>Roupas</ListTitle>
                     <List>
                         <li>
-                            <StyledLink to="../a">
-                                APIrvices
+                            <StyledLink to="../sapatos">
+                                Sapatos
                             </StyledLink>
                         </li>
                         <li>
-                            <StyledLink to="../a">
-                                APIServies
+                            <StyledLink to="../blusas">
+                                Blusas
                             </StyledLink>
                         </li>
                         <li>
-                            <StyledLink to="../a">
-                                IServices
-                            </StyledLink>
-                        </li>
-                        <li>
-                            <StyledLink to="../a">
-                                APIServes
+                            <StyledLink to="../casacos">
+                                Casacos
                             </StyledLink>
                         </li>
                     </List>
                 </CategoriesList>
-                <ItemsList>
-                    {
-                        data ?
-                        data.map(cloth => {
-                            return <ClothItem key={cloth.id} cloth={cloth} />
-                        })
-                        : null
-                    }
-                </ItemsList>
+
+                {data ?
+                    <ItemsList>
+                        {
+
+                            data.map(cloth => {
+                                return <ClothItem key={cloth.id} cloth={cloth} />
+                            })
+
+                        }
+                    </ItemsList>
+                    : <Error404 />
+                }
+
             </ContentWrapper>
         </Wrapper>
     )

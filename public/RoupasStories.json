@@ -1,6 +1,6 @@
 {
     "roupas": {
-        "sapatos": [
+        "tudo": [
             {
                 "id": 1,
                 "name": "Sapatos",
@@ -184,6 +184,428 @@
                 "link": "/",
                 "price": 120.99,
                 "title": "Blusinha Brega",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            }
+        ],
+        "sapatos": [
+            {
+                "id": 1,
+                "name": "Sapatos",
+                "icon": "sapatos.jpg",
+                "link": "/",
+                "price": 120.99,
+                "title": "Sapatos Zagonel",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 2,
+                "name": "Sapatos",
+                "icon": "sapatos.jpg",
+                "link": "/",
+                "price": 120.99,
+                "title": "Sapatos Zagonel",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 3,
+                "name": "Sapatos",
+                "icon": "sapatos.jpg",
+                "link": "/",
+                "price": 120.99,
+                "title": "Sapatos Zagonel",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 4,
+                "name": "Sapatos",
+                "icon": "sapatos.jpg",
+                "link": "/",
+                "price": 120.99,
+                "title": "Sapatos Zagonel",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 5,
+                "name": "Sapatos",
+                "icon": "sapatos.jpg",
+                "link": "/",
+                "price": 120.99,
+                "title": "Sapatos Zagonel",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 6,
+                "name": "Sapatos",
+                "icon": "sapatos.jpg",
+                "link": "/",
+                "price": 120.99,
+                "title": "Sapatos Zagonel",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 7,
+                "name": "Sapatos",
+                "icon": "sapatos.jpg",
+                "link": "/",
+                "price": 120.99,
+                "title": "Sapatos Zagonel",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 8,
+                "name": "Sapatos",
+                "icon": "sapatos.jpg",
+                "link": "/",
+                "price": 120.99,
+                "title": "Sapatos Zagonel",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            }
+        ],
+        "blusas": [
+            {
+                "id": 1,
+                "name": "Blusas",
+                "icon": "blusas.jpg",
+                "link": "/",
+                "price": 59.99,
+                "title": "Blusinha Brega",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 2,
+                "name": "Blusas",
+                "icon": "blusas.jpg",
+                "link": "/",
+                "price": 59.99,
+                "title": "Blusinha Brega",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 3,
+                "name": "Blusas",
+                "icon": "blusas.jpg",
+                "link": "/",
+                "price": 59.99,
+                "title": "Blusinha Brega",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 4,
+                "name": "Blusas",
+                "icon": "blusas.jpg",
+                "link": "/",
+                "price": 59.99,
+                "title": "Blusinha Brega",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 5,
+                "name": "Blusas",
+                "icon": "blusas.jpg",
+                "link": "/",
+                "price": 59.99,
+                "title": "Blusinha Brega",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 6,
+                "name": "Blusas",
+                "icon": "blusas.jpg",
+                "link": "/",
+                "price": 59.99,
+                "title": "Blusinha Brega",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 7,
+                "name": "Blusas",
+                "icon": "blusas.jpg",
+                "link": "/",
+                "price": 59.99,
+                "title": "Blusinha Brega",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 8,
+                "name": "Blusas",
+                "icon": "blusas.jpg",
+                "link": "/",
+                "price": 59.99,
+                "title": "Blusinha Brega",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            }
+        ],
+        "casacos": [
+            {
+                "id": 1,
+                "name": "Casacos",
+                "icon": "casacos.jpg",
+                "link": "/",
+                "price": 45.99,
+                "title": "Casaquinho de Frio",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 2,
+                "name": "Casacos",
+                "icon": "casacos.jpg",
+                "link": "/",
+                "price": 45.99,
+                "title": "Casaquinho de Frio",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 3,
+                "name": "Casacos",
+                "icon": "casacos.jpg",
+                "link": "/",
+                "price": 45.99,
+                "title": "Casaquinho de Frio",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 4,
+                "name": "Casacos",
+                "icon": "casacos.jpg",
+                "link": "/",
+                "price": 45.99,
+                "title": "Casaquinho de Frio",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 5,
+                "name": "Casacos",
+                "icon": "casacos.jpg",
+                "link": "/",
+                "price": 45.99,
+                "title": "Casaquinho de Frio",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 6,
+                "name": "Casacos",
+                "icon": "casacos.jpg",
+                "link": "/",
+                "price": 45.99,
+                "title": "Casaquinho de Frio",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 7,
+                "name": "Casacos",
+                "icon": "casacos.jpg",
+                "link": "/",
+                "price": 45.99,
+                "title": "Casaquinho de Frio",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 8,
+                "name": "Casacos",
+                "icon": "casacos.jpg",
+                "link": "/",
+                "price": 45.99,
+                "title": "Casaquinho de Frio",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 9,
+                "name": "Casacos",
+                "icon": "casacos.jpg",
+                "link": "/",
+                "price": 45.99,
+                "title": "Casaquinho de Frio",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 10,
+                "name": "Casacos",
+                "icon": "casacos.jpg",
+                "link": "/",
+                "price": 45.99,
+                "title": "Casaquinho de Frio",
                 "sizes": [
                     "P",
                     "M",
