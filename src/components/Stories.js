@@ -33,7 +33,7 @@ scroll-behavior: smooth;
 margin-top: 1rem;
 margin-bottom: 1rem;
 width: 100%;
-justify-content: space-between;;
+justify-content: space-between;
 
 ::-webkit-scrollbar {
     display: none;
@@ -125,7 +125,7 @@ export default function Stories() {
         } else {
             setShowLeftArrow(true)
         }
-        if (refStories.current.scrollLeft >= refStories.current.scrollWidth - refStories.current.clientWidth) {
+        if (refStories.current.scrollLeft >= refStories.current.scrollWidth - refStories.current.clientWidth - 2) {
             setShowRightArrow(false)
         } else {
             setShowRightArrow(true)

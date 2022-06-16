@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components"
-import { getPromoData } from "./APIServices/APIServices"
+import { getCategoriesData, getPromoData } from "./APIServices/APIServices"
 import ClothItem from "./ClothItem";
 import { Link } from "@reach/router"
 import Error404 from "./404/Error404";
@@ -86,6 +86,7 @@ const StyledLink = styled(Link)`
     text-decoration: none;
     color: #000;
     margin: 0.5rem;
+    text-transform: capitalize;
     
     :hover {
         color: #f67280;
@@ -95,7 +96,15 @@ const StyledLink = styled(Link)`
 export default function CategorizedItems({ category }) {
 
     const [data, setData] = useState([])
+    const [categories, setCategories] = useState([])
 
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await getCategoriesData()
+            setCategories(data)
+        }
+        fetchData();
+    })
 
     useEffect(() => {
         const fetchData = async () => {
@@ -111,21 +120,18 @@ export default function CategorizedItems({ category }) {
                 <CategoriesList>
                     <ListTitle>Roupas</ListTitle>
                     <List>
-                        <li>
-                            <StyledLink to="../sapatos">
-                                Sapatos
-                            </StyledLink>
-                        </li>
-                        <li>
-                            <StyledLink to="../blusas">
-                                Blusas
-                            </StyledLink>
-                        </li>
-                        <li>
-                            <StyledLink to="../casacos">
-                                Casacos
-                            </StyledLink>
-                        </li>
+                        {
+                            categories &&
+                            categories.map((category) => {
+                                return (
+                                    <li>
+                                        <StyledLink to={`../${category}`}>
+                                            {category}
+                                        </StyledLink>
+                                    </li>
+                                )
+                            })
+                        }
                     </List>
                 </CategoriesList>
 

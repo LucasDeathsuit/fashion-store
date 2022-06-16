@@ -3,17 +3,26 @@ async function getStoriesData() {
     const data = await fetch('./RoupasStories.json');
     const roupasData = await data.json()
 
-    console.log(roupasData.roupas)
+    const tempRoupas = []
 
-    return roupasData.roupas.tudo
+    for (let key in roupasData.roupas) {
+        if(key !== "tudo")
+        tempRoupas.push(roupasData.roupas[key][0])
+    }
+
+    return tempRoupas
+}
+
+async function getCategoriesData() {
+    const data = await getStoriesData()
+    const categoriesNames = data.map(data => data.name.toLowerCase());
+
+    return categoriesNames
 }
 
 async function getPromoData(type) {
     const data = await fetch('./RoupasStories.json');
     const roupasData = await data.json();
-
-    console.log(roupasData.roupas.blusas)
-    console.log(type)
     return roupasData.roupas[type];
 }
 
@@ -24,4 +33,4 @@ async function getCommentData(quantity) {
 }
 
 
-export { getStoriesData , getPromoData, getCommentData}
+export { getStoriesData, getCategoriesData, getPromoData, getCommentData }

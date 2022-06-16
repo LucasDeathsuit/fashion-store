@@ -115,11 +115,11 @@
             },
             {
                 "id": 8,
-                "name": "Blusas",
-                "icon": "blusas.jpg",
+                "name": "Calcas",
+                "icon": "calcas.jpg",
                 "link": "/",
-                "price": 120.99,
-                "title": "Blusinha Brega",
+                "price": 110.99,
+                "title": "Calças tri",
                 "sizes": [
                     "P",
                     "M",
@@ -606,6 +606,72 @@
                 "link": "/",
                 "price": 45.99,
                 "title": "Casaquinho de Frio",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            }
+        ],
+        "calcas": [
+            {
+                "id": 1,
+                "name": "Calcas",
+                "icon": "calcas.jpg",
+                "link": "/",
+                "price": 69.99,
+                "title": "Calças Bonitas",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 2,
+                "name": "Calcas",
+                "icon": "calcas.jpg",
+                "link": "/",
+                "price": 69.99,
+                "title": "Calças Bonitas",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 3,
+                "name": "Calcas",
+                "icon": "calcas.jpg",
+                "link": "/",
+                "price": 69.99,
+                "title": "Calças Bonitas",
+                "sizes": [
+                    "P",
+                    "M",
+                    "G",
+                    "GG"
+                ],
+                "selectedSize": "GG",
+                "amount": 1
+            },
+            {
+                "id": 4,
+                "name": "Calcas",
+                "icon": "calcas.jpg",
+                "link": "/",
+                "price": 69.99,
+                "title": "Calças Bonitas",
                 "sizes": [
                     "P",
                     "M",
