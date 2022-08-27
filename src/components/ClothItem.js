@@ -105,7 +105,7 @@ export default function ClothItem({addedToCart, onClick, cloth }) {
         <Item>
             <ContentWrapper>
                 <ImageWrapper>
-                    <Product src={`images/${cloth.icon}`} />
+                    <Product src={`images/${cloth.iconPath}`} />
 
                     <StyledButton onClick={handleButtonClick} type="btn--outline" size="btn--medium">
                         Add to Cart

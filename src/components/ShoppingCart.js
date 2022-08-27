@@ -74,6 +74,7 @@ const Image = styled.img`
 export default function ShoppingCart() {
 
     const [cart, setCart] = useState([])
+    const [total, setTotal] = useState(0);
     const cartRef = useRef();
 
     const handleValueChange = (value, key) => {
@@ -89,17 +90,24 @@ export default function ShoppingCart() {
         localStorage.setItem("cart", [])
     }
 
+    const calcTotal = () => {
+        return cart.reduce(
+            (total, item) => {
+                return (total + item.price * item.amount);
+            }, 0
+        ).toFixed(2)
+    }
+
     useEffect(() => {
         cartRef.current = cart;
-    }, [cart])
+    }, [cart, total])
 
     useEffect(() => {
 
         let localCart = localStorage.getItem("cart")
-        if (localCart) setCart(JSON.parse(localCart))
-
-        return function storeCart() {
-            localStorage.setItem("cart", JSON.stringify(cartRef.current))
+        if (localCart) {
+            console.log(localCart)
+            setCart(JSON.parse(localCart))
         }
     }, [])
 
@@ -130,13 +138,7 @@ export default function ShoppingCart() {
                             cart.length !== 0 ?
                                 <>
                                     <div>
-                                        Total: R${
-                                            cart.reduce(
-                                                (total, item) => {
-                                                    return (total + item.price * item.amount);
-                                                }, 0
-                                            ).toFixed(2)
-                                        }
+                                        Total: R$ {total}
                                     </div>
                                     <Button type='btn--secondary' onClick={clearCart}>
                                         Limpar Carrinho

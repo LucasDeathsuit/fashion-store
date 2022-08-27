@@ -80,7 +80,7 @@ export default function Comment({ borderColor, comment }) {
           <Avatar src={`images/${comment.picture}`} />
           <Username>{comment.name}</Username>
         </UserSection>
-        <Rating value={comment.value} />
+        <Rating value={comment.rate} />
         <CommentArea>
           <Title>{comment.title}</Title>
           <Paragraph>{comment.comment}</Paragraph>

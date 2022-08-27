@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import ClothItem from './ClothItem'
-import { getPromoData } from './APIServices/APIServices'
+import { getClothes, getPromoData } from './APIServices/APIServices'
 import Alert from './Alert'
 
 
@@ -51,7 +51,7 @@ export default function Promo() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getPromoData("tudo");
+            const data = await getClothes();
             setData(data);
         }
         fetchData();

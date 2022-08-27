@@ -5,6 +5,7 @@ import CallIcon from '@mui/icons-material/Call';
 import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import StarIcon from '@mui/icons-material/Star';
 import Button from './Button';
 import { Link } from '@reach/router'
 import Cadastro from './Cadastro';
@@ -159,13 +160,19 @@ export default function Navbar() {
             <MenuContainer>
                 <LeftMenu>
                     <StyledLink to="/fashion-store/">
-                        <Logo alt='Logo' src="images/Logo.png" />
+                        <Logo alt='Logo' src="./images/Logo.png" />
                     </StyledLink>
                 </LeftMenu>
                 <MenuIconWrapper onClick={() => setIsShowingMenu(!isShowingMenu)}>
                     {!isShowingMenu ? <MenuIcon /> : <CloseIcon />}
                 </MenuIconWrapper>
                 <RightMenuList className={`${isTransparent} ? "transparent" : " "`} active={isShowingMenu}>
+                    <StyledLink to='/fashion-store/avalie-nos'>
+                        <NavItem>
+                            <StarIcon color='white' />
+                            Avalie-nos
+                        </NavItem>
+                    </StyledLink>
                     <StyledLink to='/fashion-store/atendimento'>
                         <NavItem>
                             <CallIcon color='white' />

@@ -4,7 +4,7 @@
             {
                 "id": 1,
                 "name": "Sapatos",
-                "icon": "sapatos.jpg",
+                "icon": "sapatos.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Sapatos Zagonel",
@@ -20,7 +20,7 @@
             {
                 "id": 2,
                 "name": "Blusas",
-                "icon": "blusas.jpg",
+                "icon": "blusas.png",
                 "link": "/",
                 "price": 59.99,
                 "title": "Blusinha Brega",
@@ -36,7 +36,7 @@
             {
                 "id": 3,
                 "name": "Casacos",
-                "icon": "casacos.jpg",
+                "icon": "casacos.png",
                 "link": "/",
                 "price": 45.99,
                 "title": "Casaquinho de Frio",
@@ -52,7 +52,7 @@
             {
                 "id": 4,
                 "name": "Sapatos",
-                "icon": "sapatos.jpg",
+                "icon": "sapatos.png",
                 "link": "/",
                 "price": 83.69,
                 "title": "Sapatos Zagonel",
@@ -68,7 +68,7 @@
             {
                 "id": 5,
                 "name": "Blusas",
-                "icon": "blusas.jpg",
+                "icon": "blusas.png",
                 "link": "/",
                 "price": 99.99,
                 "title": "Blusinha Brega",
@@ -84,7 +84,7 @@
             {
                 "id": 6,
                 "name": "Casacos",
-                "icon": "casacos.jpg",
+                "icon": "casacos.png",
                 "link": "/",
                 "price": 120.49,
                 "title": "Casaquinho de Frio",
@@ -100,7 +100,7 @@
             {
                 "id": 7,
                 "name": "Sapatos",
-                "icon": "sapatos.jpg",
+                "icon": "sapatos.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Sapatos Zagonel",
@@ -116,7 +116,7 @@
             {
                 "id": 8,
                 "name": "Calcas",
-                "icon": "calcas.jpg",
+                "icon": "calcas.png",
                 "link": "/",
                 "price": 110.99,
                 "title": "Calças tri",
@@ -132,7 +132,7 @@
             {
                 "id": 9,
                 "name": "Casacos",
-                "icon": "casacos.jpg",
+                "icon": "casacos.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Casaquinho de Frio",
@@ -148,7 +148,7 @@
             {
                 "id": 10,
                 "name": "Blusas",
-                "icon": "blusas.jpg",
+                "icon": "blusas.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Blusinha Brega",
@@ -164,7 +164,7 @@
             {
                 "id": 11,
                 "name": "Sapatos",
-                "icon": "sapatos.jpg",
+                "icon": "sapatos.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Sapatos Zagonel",
@@ -180,7 +180,7 @@
             {
                 "id": 12,
                 "name": "Blusas",
-                "icon": "blusas.jpg",
+                "icon": "blusas.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Blusinha Brega",
@@ -198,7 +198,7 @@
             {
                 "id": 1,
                 "name": "Sapatos",
-                "icon": "sapatos.jpg",
+                "icon": "sapatos.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Sapatos Zagonel",
@@ -214,7 +214,7 @@
             {
                 "id": 2,
                 "name": "Sapatos",
-                "icon": "sapatos.jpg",
+                "icon": "sapatos.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Sapatos Zagonel",
@@ -230,7 +230,7 @@
             {
                 "id": 3,
                 "name": "Sapatos",
-                "icon": "sapatos.jpg",
+                "icon": "sapatos.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Sapatos Zagonel",
@@ -246,7 +246,7 @@
             {
                 "id": 4,
                 "name": "Sapatos",
-                "icon": "sapatos.jpg",
+                "icon": "sapatos.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Sapatos Zagonel",
@@ -262,7 +262,7 @@
             {
                 "id": 5,
                 "name": "Sapatos",
-                "icon": "sapatos.jpg",
+                "icon": "sapatos.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Sapatos Zagonel",
@@ -278,7 +278,7 @@
             {
                 "id": 6,
                 "name": "Sapatos",
-                "icon": "sapatos.jpg",
+                "icon": "sapatos.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Sapatos Zagonel",
@@ -294,7 +294,7 @@
             {
                 "id": 7,
                 "name": "Sapatos",
-                "icon": "sapatos.jpg",
+                "icon": "sapatos.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Sapatos Zagonel",
@@ -310,7 +310,7 @@
             {
                 "id": 8,
                 "name": "Sapatos",
-                "icon": "sapatos.jpg",
+                "icon": "sapatos.png",
                 "link": "/",
                 "price": 120.99,
                 "title": "Sapatos Zagonel",
@@ -328,7 +328,7 @@
             {
                 "id": 1,
                 "name": "Blusas",
-                "icon": "blusas.jpg",
+                "icon": "blusas.png",
                 "link": "/",
                 "price": 59.99,
                 "title": "Blusinha Brega",
@@ -344,7 +344,7 @@
             {
                 "id": 2,
                 "name": "Blusas",
-                "icon": "blusas.jpg",
+                "icon": "blusas.png",
                 "link": "/",
                 "price": 59.99,
                 "title": "Blusinha Brega",
@@ -360,7 +360,7 @@
             {
                 "id": 3,
                 "name": "Blusas",
-                "icon": "blusas.jpg",
+                "icon": "blusas.png",
                 "link": "/",
                 "price": 59.99,
                 "title": "Blusinha Brega",
@@ -376,7 +376,7 @@
             {
                 "id": 4,
                 "name": "Blusas",
-                "icon": "blusas.jpg",
+                "icon": "blusas.png",
                 "link": "/",
                 "price": 59.99,
                 "title": "Blusinha Brega",
@@ -392,7 +392,7 @@
             {
                 "id": 5,
                 "name": "Blusas",
-                "icon": "blusas.jpg",
+                "icon": "blusas.png",
                 "link": "/",
                 "price": 59.99,
                 "title": "Blusinha Brega",
@@ -408,7 +408,7 @@
             {
                 "id": 6,
                 "name": "Blusas",
-                "icon": "blusas.jpg",
+                "icon": "blusas.png",
                 "link": "/",
                 "price": 59.99,
                 "title": "Blusinha Brega",
@@ -424,7 +424,7 @@
             {
                 "id": 7,
                 "name": "Blusas",
-                "icon": "blusas.jpg",
+                "icon": "blusas.png",
                 "link": "/",
                 "price": 59.99,
                 "title": "Blusinha Brega",
@@ -440,7 +440,7 @@
             {
                 "id": 8,
                 "name": "Blusas",
-                "icon": "blusas.jpg",
+                "icon": "blusas.png",
                 "link": "/",
                 "price": 59.99,
                 "title": "Blusinha Brega",
@@ -458,7 +458,7 @@
             {
                 "id": 1,
                 "name": "Casacos",
-                "icon": "casacos.jpg",
+                "icon": "casacos.png",
                 "link": "/",
                 "price": 45.99,
                 "title": "Casaquinho de Frio",
@@ -474,7 +474,7 @@
             {
                 "id": 2,
                 "name": "Casacos",
-                "icon": "casacos.jpg",
+                "icon": "casacos.png",
                 "link": "/",
                 "price": 45.99,
                 "title": "Casaquinho de Frio",
@@ -490,7 +490,7 @@
             {
                 "id": 3,
                 "name": "Casacos",
-                "icon": "casacos.jpg",
+                "icon": "casacos.png",
                 "link": "/",
                 "price": 45.99,
                 "title": "Casaquinho de Frio",
@@ -506,7 +506,7 @@
             {
                 "id": 4,
                 "name": "Casacos",
-                "icon": "casacos.jpg",
+                "icon": "casacos.png",
                 "link": "/",
                 "price": 45.99,
                 "title": "Casaquinho de Frio",
@@ -522,7 +522,7 @@
             {
                 "id": 5,
                 "name": "Casacos",
-                "icon": "casacos.jpg",
+                "icon": "casacos.png",
                 "link": "/",
                 "price": 45.99,
                 "title": "Casaquinho de Frio",
@@ -538,7 +538,7 @@
             {
                 "id": 6,
                 "name": "Casacos",
-                "icon": "casacos.jpg",
+                "icon": "casacos.png",
                 "link": "/",
                 "price": 45.99,
                 "title": "Casaquinho de Frio",
@@ -554,7 +554,7 @@
             {
                 "id": 7,
                 "name": "Casacos",
-                "icon": "casacos.jpg",
+                "icon": "casacos.png",
                 "link": "/",
                 "price": 45.99,
                 "title": "Casaquinho de Frio",
@@ -570,7 +570,7 @@
             {
                 "id": 8,
                 "name": "Casacos",
-                "icon": "casacos.jpg",
+                "icon": "casacos.png",
                 "link": "/",
                 "price": 45.99,
                 "title": "Casaquinho de Frio",
@@ -586,7 +586,7 @@
             {
                 "id": 9,
                 "name": "Casacos",
-                "icon": "casacos.jpg",
+                "icon": "casacos.png",
                 "link": "/",
                 "price": 45.99,
                 "title": "Casaquinho de Frio",
@@ -602,7 +602,7 @@
             {
                 "id": 10,
                 "name": "Casacos",
-                "icon": "casacos.jpg",
+                "icon": "casacos.png",
                 "link": "/",
                 "price": 45.99,
                 "title": "Casaquinho de Frio",
@@ -620,7 +620,7 @@
             {
                 "id": 1,
                 "name": "Calcas",
-                "icon": "calcas.jpg",
+                "icon": "calcas.png",
                 "link": "/",
                 "price": 69.99,
                 "title": "Calças Bonitas",
@@ -636,7 +636,7 @@
             {
                 "id": 2,
                 "name": "Calcas",
-                "icon": "calcas.jpg",
+                "icon": "calcas.png",
                 "link": "/",
                 "price": 69.99,
                 "title": "Calças Bonitas",
@@ -652,7 +652,7 @@
             {
                 "id": 3,
                 "name": "Calcas",
-                "icon": "calcas.jpg",
+                "icon": "calcas.png",
                 "link": "/",
                 "price": 69.99,
                 "title": "Calças Bonitas",
@@ -668,7 +668,7 @@
             {
                 "id": 4,
                 "name": "Calcas",
-                "icon": "calcas.jpg",
+                "icon": "calcas.png",
                 "link": "/",
                 "price": 69.99,
                 "title": "Calças Bonitas",

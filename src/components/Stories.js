@@ -159,9 +159,6 @@ export default function Stories() {
         }
     }, [])
 
-
-    console.log(data)
-
     useEffect(() => {
         let timer;
         refStories.current.scrollLeft = scrollLeft;

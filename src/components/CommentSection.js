@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getCommentData } from './APIServices/APIServices'
+import { getComments } from './APIServices/APIServices'
 import Comment from './Comment'
 
 export default function CommentSection({ quantity }) {
@@ -9,7 +9,7 @@ export default function CommentSection({ quantity }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                setComments(await getCommentData(quantity));
+                setComments(await getComments(quantity));
             } catch (err) {
                 console.log(err)
             }
@@ -23,7 +23,7 @@ export default function CommentSection({ quantity }) {
     return (
         <>
             {
-                comments.map((comment, index) => {
+                comments?.map((comment, index) => {
                     return <Comment key={index} comment={comment} />
                 })
             }

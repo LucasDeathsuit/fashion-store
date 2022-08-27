@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components"
-import { getCategoriesData, getPromoData } from "./APIServices/APIServices"
+import { getCategoriesData, getClothesByType, getPromoData } from "./APIServices/APIServices"
 import ClothItem from "./ClothItem";
 import { Link } from "@reach/router"
 import Error404 from "./404/Error404";
@@ -108,7 +108,7 @@ export default function CategorizedItems({ category }) {
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getPromoData(category)
+            const data = await getClothesByType(category)
             setData(data)
         }
         fetchData();

@@ -96,11 +96,11 @@ const Price = styled.div`
     }
 `
 
-export default function CartItem({index, onChange, item }) {
+export default function CartItem({ index, onChange, item }) {
 
-    const { amount, title, icon, price, sizes } = item;
+    const { amount, title, iconPath, price, sizes } = item;
 
-    const [quantity, setQuantity] = useState(amount)
+    const [quantity, setQuantity] = useState(1)
 
 
     const handleQuantityChange = (value) => {
@@ -115,7 +115,7 @@ export default function CartItem({index, onChange, item }) {
 
     return (
         <CartContainer>
-            <Picture src={`images/${icon}`} />
+            <Picture src={`images/${iconPath}`} />
             <Description>
                 <Title>
                     {title}
@@ -124,11 +124,15 @@ export default function CartItem({index, onChange, item }) {
                     Valor Único: R${price}
                 </Subtitle>
             </Description>
-            <Select>
-                {sizes.map(option => {
-                    return <option key={option} value={option}>{option}</option>
-                })}
-            </Select>
+            {
+                sizes &&
+                <Select>
+                    {
+                        sizes.map(option => {
+                            return <option key={option} value={option}>{option}</option>
+                        })}
+                </Select>
+            }
             <Quantity>
                 <Button className='plus' onClick={() => handleQuantityChange(1)}>+</Button>
                 <Value>{quantity}</Value>

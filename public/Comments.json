@@ -1,21 +1,21 @@
 {
     "comments": [
         {
-            "picture": "sapatos.jpg",
+            "picture": "sapatos.png",
             "name": "Fernanda Teles",
             "value": 5,
             "title": "Muito bom",
             "comment": "Amei de coração... Lindos demais os produtinhos mores"
         },
         {
-            "picture": "casacos.jpg",
+            "picture": "casacos.png",
             "name": "Lucas Nunes",
             "value": 4,
             "title": "É us guriii!!",
             "comment": "Massa demais nonono"
         },
         {
-            "picture": "blusas.jpg",
+            "picture": "blusas.png",
             "name": "Emminha Teles Nunes",
             "value": 5,
             "title": "Muito bom",
