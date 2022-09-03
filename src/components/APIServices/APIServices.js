@@ -1,17 +1,21 @@
 import axios from 'axios'
 
-const BASE_URL = "http://localhost:13233/ClothStore/rest"
+const BASE_URL = "http://localhost:13233/ClothStore"
+const BASE_URL_API = BASE_URL + "/rest"
 
-async function createCloth(name, description, iconPath, price, type) {
+async function createCloth(name, description, price, type) {
     try {
-        const url = BASE_URL + "/clothes"
-        const data = await axios.post(url, {
+        const url = BASE_URL_API + "/clothes"
+        const resp = await axios.post(url, {
             name: name,
             description: description,
-            imageURL: iconPath,
             price: price,
             type: type
         });
+
+        const id = resp.data.idCloth
+        return id
+
     } catch (err) {
         console.log(err)
     }
@@ -19,7 +23,7 @@ async function createCloth(name, description, iconPath, price, type) {
 
 async function createComment(name, picture, rate, title, comment) {
     try {
-        const url = BASE_URL + "/comments"   
+        const url = BASE_URL_API + "/comments"
         const resp = await axios.post(url, {
             name: name,
             picture: picture,
@@ -34,17 +38,17 @@ async function createComment(name, picture, rate, title, comment) {
 
 async function getClothes() {
     try {
-        const url = BASE_URL + "/clothes"
+        const url = BASE_URL_API + "/clothes"
         const data = await axios.get(url)
         return data.data;
     } catch (err) {
         console.log(err)
-    } 
+    }
 }
 
 async function getComments() {
     try {
-        const url = BASE_URL + "/comments"
+        const url = BASE_URL_API + "/comments"
         const resp = await axios.get(url)
         return resp.data
     } catch (err) {
@@ -54,12 +58,12 @@ async function getComments() {
 
 async function getClothesByType(category) {
     try {
-        const url = BASE_URL + "/clothes/type/" + category
+        const url = BASE_URL_API + "/clothes/type/" + category
         const data = await axios.get(url)
         return data.data;
     } catch (err) {
         console.log(err)
-    } 
+    }
 }
 
 async function getStoriesData() {
@@ -95,5 +99,24 @@ async function getCommentData(quantity) {
     return commentsData.comments.slice(0, quantity);
 }
 
+async function uploadImage(image, idcloth, name) {
+    const formData = new FormData();
+    const url = BASE_URL_API + "/file_upload"
+    formData.append("file", image);
+    formData.append("clothReference", idcloth);
+    formData.append("imageName", name);
+    
+    try {
+        const resp = await axios.post(url, formData, {
+            headers: {
+                "content-type": "application/x-www-form-urlencoded"
+            }
+        })
+        return resp.data
+    } catch(err) {
+        console.log(err)
+    }
+}
 
-export {createCloth, getComments, createComment, getClothes, getClothesByType, getStoriesData, getCategoriesData, getPromoData, getCommentData }
+
+export { createCloth, getComments, createComment, getClothes, getClothesByType, getStoriesData, getCategoriesData, getPromoData, getCommentData, uploadImage }
